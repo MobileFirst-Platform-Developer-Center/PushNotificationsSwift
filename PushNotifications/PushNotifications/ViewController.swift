@@ -93,20 +93,25 @@ extension ViewController {
             
             print("Registered closure entered")
             
+            if responce != nil {
+                print(responce.description)
+            }
+            
             if error == nil {
-                print("")
+                print("Registered successfully")
             } else {
                 self.showAlert("Registrations failed.  Error \(error.description)")
-                print("Error \(error.description)")
+                print(error.description)
             }
             
         })
     }
     
     @IBAction func getTags(sender: AnyObject) {
+        
         MFPPush.sharedInstance().getTags({(responce: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert("this could work")
+                self.showAlert(responce.description)
             } else {
                 self.showAlert("Error \(error.description)")
                 print("Error \(error.description)")

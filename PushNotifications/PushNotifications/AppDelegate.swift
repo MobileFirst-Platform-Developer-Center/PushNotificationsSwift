@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let primaryColor = UIColor(red: 75/255, green: 107/255, blue: 175/255, alpha: 1.0)
+    let iconColor = UIColor.whiteColor()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize MFPPush
         MFPPush.initialize()
+        
+        setAppStyle()
         
         return true
     }
@@ -72,5 +76,24 @@ extension AppDelegate {
 //        self.showAlert("Registration failed")
     }
     
+}
+
+// MARK: App Setup
+extension AppDelegate {
+    
+    func setAppStyle() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        let navBarAppearance = UINavigationBar.appearance()
+        
+        navBarAppearance.barTintColor = primaryColor
+        navBarAppearance.tintColor = iconColor
+        navBarAppearance.barStyle = .Black
+        
+        let toolBarApperance = UIToolbar.appearance()
+        
+        toolBarApperance.barTintColor = primaryColor
+        toolBarApperance.tintColor = iconColor
+    }
 }
 
