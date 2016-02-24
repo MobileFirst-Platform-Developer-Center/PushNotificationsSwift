@@ -3,10 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Push Notification-->
+        <!--Push Notifications-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PushNotifications" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Push!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBX-er-Q7U">
-                                <rect key="frame" x="20" y="72" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnZ-oc-gdU">
                                 <rect key="frame" x="246" y="139" width="108" height="30"/>
                                 <state key="normal" title="Register Device"/>
@@ -81,7 +74,6 @@
                             <constraint firstItem="Bgv-Je-ZAe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eoe-Mp-ncs"/>
                             <constraint firstItem="oX7-ww-NUZ" firstAttribute="top" secondItem="dnZ-oc-gdU" secondAttribute="bottom" constant="8" id="EwQ-aU-U7z"/>
                             <constraint firstItem="OLb-av-nUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="IEE-1V-fG4"/>
-                            <constraint firstItem="wBX-er-Q7U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="JpJ-CZ-dWt"/>
                             <constraint firstItem="daT-d9-Gwm" firstAttribute="top" secondItem="tIv-n4-fPA" secondAttribute="bottom" constant="8" id="MUL-bI-CaR"/>
                             <constraint firstItem="Bgv-Je-ZAe" firstAttribute="top" secondItem="oX7-ww-NUZ" secondAttribute="bottom" constant="8" id="PRN-nm-Erg"/>
                             <constraint firstItem="oX7-ww-NUZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PmR-oz-w3V"/>
@@ -89,12 +81,11 @@
                             <constraint firstItem="daT-d9-Gwm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xdb-Qa-3tg"/>
                             <constraint firstItem="wPb-fB-9hp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xez-zk-SoH"/>
                             <constraint firstItem="OLb-av-nUd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e5h-oT-rk4"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="wBX-er-Q7U" secondAttribute="leading" id="g6A-9a-iLG"/>
                             <constraint firstItem="tIv-n4-fPA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kOA-KW-HLD"/>
                             <constraint firstItem="dnZ-oc-gdU" firstAttribute="top" secondItem="OLb-av-nUd" secondAttribute="bottom" constant="8" id="v77-bp-zb4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Push Notification" id="DsU-g1-6ul"/>
+                    <navigationItem key="navigationItem" title="Push Notifications" id="DsU-g1-6ul"/>
                     <connections>
                         <outlet property="getSubcriptionBtn" destination="wPb-fB-9hp" id="u92-8p-w9y"/>
                         <outlet property="subscribeBtn" destination="Bgv-Je-ZAe" id="hez-Zl-ByX"/>
@@ -122,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsD-07-XKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="1139"/>
+            <point key="canvasLocation" x="533" y="479"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.49803921568627452" green="0.10980392156862745" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
