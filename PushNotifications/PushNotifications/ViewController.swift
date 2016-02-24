@@ -1,3 +1,19 @@
+/**
+ * Copyright 2016 IBM Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
 //
 //  ViewController.swift
 //  PushNotifications
@@ -48,6 +64,8 @@ extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        MFPPush.sharedInstance().initialize()
+        
         // Disable buttons by default
         subscribeBtn.enabled = false
         getSubcriptionBtn.enabled = false
@@ -76,25 +94,26 @@ extension ViewController {
     }
     
     @IBAction func registerDevice(sender: AnyObject) {
+        
+        // Reference to system version as float
         let systemVersion: Float = (UIDevice.currentDevice().systemVersion as NSString).floatValue
+        
+        // Verify version and enable notifications accordingly at the device level
         if systemVersion >= 8.0 {
             let userNotificationTypes = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
             UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationTypes)
-            enableButtons()
-//            self.showAlert("Registered successfully")
         } else {
             UIApplication.sharedApplication().registerForRemoteNotifications()
-            enableButtons()
-//            self.showAlert("Registered successfully")
         }
         
         
-        MFPPush.sharedInstance().registerDevice({(responce: WLResponse!, error: NSError!) -> Void in
+        MFPPush.sharedInstance().registerDevice({(response: WLResponse!, error: NSError!) -> Void in
             
             print("Registered closure entered")
             
-            if responce != nil {
-                print(responce.description)
+            if response != nil {
+                self.enableButtons()
+                print(response.description)
             }
             
             if error == nil {

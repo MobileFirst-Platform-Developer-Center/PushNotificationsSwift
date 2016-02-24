@@ -1,3 +1,19 @@
+/**
+ * Copyright 2016 IBM Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 //
 //  AppDelegate.swift
 //  PushNotifications
@@ -12,8 +28,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    // Blue
     let primaryColor = UIColor(red: 75/255, green: 107/255, blue: 175/255, alpha: 1.0)
-    let iconColor = UIColor.whiteColor()
+    // Purple
+    let iconColor = UIColor(red: 127/255, green: 28/255, blue: 125/255, alpha: 1.0)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -64,12 +82,12 @@ extension AppDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        print("Registered successfully")
+        print("didRegisterForRemoteNotificationsWithDeviceToken: Registered device successfully")
         MFPPush.sharedInstance().sendDeviceToken(deviceToken)
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        print("Registered successfully")
+
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -82,8 +100,11 @@ extension AppDelegate {
 extension AppDelegate {
     
     func setAppStyle() {
+        
+        // Set status bar color to white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        // Set navigation bar color
         let navBarAppearance = UINavigationBar.appearance()
         
         navBarAppearance.barTintColor = primaryColor
