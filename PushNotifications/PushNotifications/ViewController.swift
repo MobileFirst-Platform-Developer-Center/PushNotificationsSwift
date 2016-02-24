@@ -130,7 +130,8 @@ extension ViewController {
         
         MFPPush.sharedInstance().getTags({(responce: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(responce.description)
+                self.showAlert(String(responce.availableTags()))
+                print("Tags responce: \(responce)")
             } else {
                 self.showAlert("Error \(error.description)")
                 print("Error \(error.description)")
