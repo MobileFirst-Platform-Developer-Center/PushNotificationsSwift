@@ -83,6 +83,8 @@ extension ViewController {
 extension ViewController {
     
     @IBAction func isPushSupported(sender: AnyObject) {
+        print("Is push supported entered")
+        
         let isPushSupported: Bool = MFPPush.sharedInstance().isPushSupported()
   
         if isPushSupported {
@@ -94,6 +96,7 @@ extension ViewController {
     }
     
     @IBAction func registerDevice(sender: AnyObject) {
+        print("Register device entered")
         
         // Reference to system version as float
         let systemVersion: Float = (UIDevice.currentDevice().systemVersion as NSString).floatValue
@@ -106,18 +109,11 @@ extension ViewController {
             UIApplication.sharedApplication().registerForRemoteNotifications()
         }
         
-        
+        // Register device
         MFPPush.sharedInstance().registerDevice({(response: WLResponse!, error: NSError!) -> Void in
-            
-            print("Registered closure entered")
-            
-            if response != nil {
-                self.enableButtons()
-                print(response.description)
-            }
-            
             if error == nil {
                 print("Registered successfully")
+                print(response.description)
             } else {
                 self.showAlert("Registrations failed.  Error \(error.description)")
                 print(error.description)
@@ -127,11 +123,13 @@ extension ViewController {
     }
     
     @IBAction func getTags(sender: AnyObject) {
+        print("Get tags entered")
         
-        MFPPush.sharedInstance().getTags({(responce: WLResponse!, error: NSError!) -> Void in
+        // Get tags
+        MFPPush.sharedInstance().getTags({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(String(responce.availableTags()))
-                print("Tags responce: \(responce)")
+                self.showAlert(String(response.availableTags()))
+                print("Tags response: \(response)")
             } else {
                 self.showAlert("Error \(error.description)")
                 print("Error \(error.description)")
@@ -141,19 +139,71 @@ extension ViewController {
     }
     
     @IBAction func subscribe(sender: AnyObject) {
-        showAlert("Setup subscribe")
+        print("Subcribe entered")
+        
+        // Array of tags to subscribe to
+        let tagsArray: [String] = ["Tag 1", "Tag 2"]
+        
+        // Subscribe to tags
+        MFPPush.sharedInstance().subscribe(tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
+            if error == nil {
+                self.showAlert(String(response.description))
+                print("Subscribed successfully response: \(response)")
+            } else {
+                self.showAlert("Error \(error.description)")
+                print("Error \(error.description)")
+            }
+        })
     }
     
     @IBAction func getSubscriptions(sender: AnyObject) {
-        showAlert("Setup get subscriptions")
+        print("Get subscription entered")
+        
+        // Get list of subscribtions
+        MFPPush.sharedInstance().getSubscriptions({(response: WLResponse!, error: NSError!) -> Void in
+            if error == nil {
+                self.showAlert(String(response.availableTags()))
+                print("Get subscription response: \(response)")
+            } else {
+                self.showAlert("Error \(error.description)")
+                print("Error \(error.description)")
+            }
+        })
     }
     
     @IBAction func unsubscribe(sender: AnyObject) {
-        showAlert("Setup unsubscribe")
+        print("Unsubscribe entered")
+        
+        // Array of tags to unsubscribe from
+        let tagsArray: [String] = ["Tag 1", "Tag 2"]
+        
+        // Unsubscribe from tags
+        MFPPush.sharedInstance().unsubscribe(tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
+            if error == nil {
+                self.showAlert(String(response.description))
+                print("Subscribed successfully response: \(response)")
+            } else {
+                self.showAlert("Error \(error.description)")
+                print("Error \(error.description)")
+            }
+        })
     }
     
     @IBAction func unregisterDevice(sender: AnyObject) {
+        print("Unregister device entered")
+        
+        // Disable buttons
         self.disableButtons()
-        showAlert("Setup unregister")
+        
+        // Unregister device
+        MFPPush.sharedInstance().unregisterDevice({(response: WLResponse!, error: NSError!) -> Void in
+            if error == nil {
+                self.showAlert(String(response.description))
+                print("Subscribed successfully response: \(response)")
+            } else {
+                self.showAlert("Error \(error.description)")
+                print("Error \(error.description)")
+            }
+        })
     }
 }
