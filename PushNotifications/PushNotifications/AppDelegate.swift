@@ -94,6 +94,12 @@ extension AppDelegate {
 //        self.showAlert("Registration failed")
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("Recieved Notification \(userInfo.description)")
+        
+        showAlert(userInfo.description)
+    }
+    
 }
 
 // MARK: App Setup
