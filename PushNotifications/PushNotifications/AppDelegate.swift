@@ -97,6 +97,18 @@ extension AppDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recieved Notification \(userInfo.description)")
         
+        var alert: String = "alert"
+        var alertID: String = "ID"
+        var alertPayload: String = "Payload"
+        
+        //TODO: Retrieve alert data
+        
+        
+        showAlert("Alert: \(alert) \n ID: \(alertID) \n Payload: \(alertPayload)")
+        
+        
+        
+        
         showAlert(userInfo.description)
     }
     
