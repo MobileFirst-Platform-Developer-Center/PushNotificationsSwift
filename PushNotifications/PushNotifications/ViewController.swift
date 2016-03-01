@@ -112,7 +112,9 @@ extension ViewController {
         // Register device
         MFPPush.sharedInstance().registerDevice({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                print("Registered successfully")
+                self.enableButtons()
+                self.showAlert("Registered successfully")
+
                 print(response.description)
             } else {
                 self.showAlert("Registrations failed.  Error \(error.description)")
@@ -128,8 +130,12 @@ extension ViewController {
         // Get tags
         MFPPush.sharedInstance().getTags({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(String(response.availableTags()))
-                print("Tags response: \(response)")
+                if response.availableTags() == nil {
+                    self.showAlert("There are no available tags")
+                } else {
+                    self.showAlert(String(response.availableTags()))
+                    print("Tags response: \(response)")
+                }
             } else {
                 self.showAlert("Error \(error.description)")
                 print("Error \(error.description)")
@@ -139,18 +145,18 @@ extension ViewController {
     }
     
     @IBAction func subscribe(sender: AnyObject) {
-        print("Subcribe entered")
+        print("Subscribe entered")
         
         // Array of tags to subscribe to
-        let tagsArray: [String] = ["Tag 1", "Tag 2"]
+        let tagsArray: [AnyObject] = ["Tag 1", "Tag 2"]
         
         // Subscribe to tags
         MFPPush.sharedInstance().subscribe(tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(String(response.description))
+                self.showAlert("Subscribed successfully")
                 print("Subscribed successfully response: \(response)")
             } else {
-                self.showAlert("Error \(error.description)")
+                self.showAlert("Fialed to subscribe")
                 print("Error \(error.description)")
             }
         })
@@ -159,11 +165,24 @@ extension ViewController {
     @IBAction func getSubscriptions(sender: AnyObject) {
         print("Get subscription entered")
         
-        // Get list of subscribtions
+        // Get list of subscriptions
         MFPPush.sharedInstance().getSubscriptions({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(String(response.availableTags()))
-                print("Get subscription response: \(response)")
+
+                var tags = [String]()
+            
+                let json = response.responseJSON as NSDictionary
+  
+                let subscriptions = json["subscriptions"] as? [[String: AnyObject]]
+                
+                for tag in subscriptions! {
+                    if let tagName = tag["tagName"] as? String {
+                        print("tagName: \(tagName)")
+                        tags.append(tagName)
+                    }
+                }
+                
+                self.showAlert(String(tags))
             } else {
                 self.showAlert("Error \(error.description)")
                 print("Error \(error.description)")
