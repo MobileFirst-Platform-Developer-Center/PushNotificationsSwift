@@ -156,7 +156,7 @@ extension ViewController {
                 self.showAlert("Subscribed successfully")
                 print("Subscribed successfully response: \(response)")
             } else {
-                self.showAlert("Fialed to subscribe")
+                self.showAlert("Failed to subscribe")
                 print("Error \(error.description)")
             }
         })
@@ -170,9 +170,8 @@ extension ViewController {
             if error == nil {
 
                 var tags = [String]()
-            
+
                 let json = response.responseJSON as NSDictionary
-  
                 let subscriptions = json["subscriptions"] as? [[String: AnyObject]]
                 
                 for tag in subscriptions! {
@@ -199,8 +198,8 @@ extension ViewController {
         // Unsubscribe from tags
         MFPPush.sharedInstance().unsubscribe(tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(String(response.description))
-                print("Subscribed successfully response: \(response)")
+                self.showAlert("Unsubscribed successfully")
+                print(String(response.description))
             } else {
                 self.showAlert("Error \(error.description)")
                 print("Error \(error.description)")
@@ -217,7 +216,8 @@ extension ViewController {
         // Unregister device
         MFPPush.sharedInstance().unregisterDevice({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
-                self.showAlert(String(response.description))
+                self.disableButtons()
+                self.showAlert("Unregistered successfully")
                 print("Subscribed successfully response: \(response)")
             } else {
                 self.showAlert("Error \(error.description)")
