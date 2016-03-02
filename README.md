@@ -10,7 +10,7 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notificatio
 
 1. From a command-line window, navigate to the project's root folder and run the command: `mfpdev app register`.
 2. In the MobileFirst console, under **Applications** → **PushNotificationsSwift** → **Security** → **Map scope elements to security checks**, add a mapping for `push.mobileclient`.
-3. Via the MobileFirst Operations Console, setup the MobileFirst Server with either GCM details or APNS certificate, and add tags.
+3. Via the MobileFirst Operations Console, setup the MobileFirst Server with the APNS certificate, and add tags.
 4. Import the project to Xcode, and run the sample by clicking the **Run* button.
 
 Notes:
