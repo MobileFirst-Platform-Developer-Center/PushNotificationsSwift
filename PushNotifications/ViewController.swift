@@ -25,6 +25,7 @@
 import UIKit
 
 
+// MARK: Variables and Helper Methods
 class ViewController: UIViewController {
     
     // Button outlets
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
     
 }
 
-// MARK: Lifecycle methods
+// MARK: Lifecycle Methods
 extension ViewController {
     
     override func viewDidLoad() {
