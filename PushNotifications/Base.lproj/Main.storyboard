@@ -60,8 +60,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIv-n4-fPA">
-                                <rect key="frame" x="228" y="291" width="145" height="30"/>
-                                <state key="normal" title="Unsubscribe To Tags"/>
+                                <rect key="frame" x="219" y="291" width="163" height="30"/>
+                                <state key="normal" title="Unsubscribe From Tags"/>
                                 <connections>
                                     <action selector="unsubscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mva-SU-hV0"/>
                                 </connections>
