@@ -32,8 +32,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-Je-ZAe">
-                                <rect key="frame" x="265" y="215" width="70" height="30"/>
-                                <state key="normal" title="Subscribe"/>
+                                <rect key="frame" x="237" y="215" width="127" height="30"/>
+                                <state key="normal" title="Subscribe To Tags"/>
                                 <connections>
                                     <action selector="subscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BI-3y-9YL"/>
                                 </connections>
@@ -52,18 +52,18 @@
                                     <action selector="unregisterDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbV-Bh-rqd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIv-n4-fPA">
-                                <rect key="frame" x="257" y="291" width="87" height="30"/>
-                                <state key="normal" title="Unsubscribe"/>
-                                <connections>
-                                    <action selector="unsubscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mva-SU-hV0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLb-av-nUd">
                                 <rect key="frame" x="237" y="101" width="127" height="30"/>
                                 <state key="normal" title="Is Push Supported"/>
                                 <connections>
                                     <action selector="isPushSupported:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfD-7A-3yo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIv-n4-fPA">
+                                <rect key="frame" x="228" y="291" width="145" height="30"/>
+                                <state key="normal" title="Unsubscribe To Tags"/>
+                                <connections>
+                                    <action selector="unsubscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mva-SU-hV0"/>
                                 </connections>
                             </button>
                         </subviews>
