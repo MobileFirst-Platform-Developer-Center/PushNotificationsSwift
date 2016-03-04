@@ -65,8 +65,6 @@ extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MFPPush.sharedInstance().initialize()
-        
         // Disable buttons by default
         subscribeBtn.enabled = false
         getSubcriptionBtn.enabled = false
@@ -172,7 +170,7 @@ extension ViewController {
 
                 var tags = [String]()
 
-                let json = response.responseJSON as NSDictionary
+                let json = response.responseJSON as Dictionary
                 let subscriptions = json["subscriptions"] as? [[String: AnyObject]]
                 
                 for tag in subscriptions! {

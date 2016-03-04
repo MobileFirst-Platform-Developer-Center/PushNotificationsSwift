@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Initialize MFPPush
-        MFPPush.initialize()
+        MFPPush.sharedInstance().initialize()
         
         setAppStyle()
         
@@ -83,6 +83,8 @@ extension AppDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("didRegisterForRemoteNotificationsWithDeviceToken: Registered device successfully")
+        
+        // Registers device token with server.
         MFPPush.sharedInstance().sendDeviceToken(deviceToken)
     }
     
@@ -95,13 +97,18 @@ extension AppDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("Recieved Notification \(userInfo.description)")
+        print("Recieved Notification \(userInfo)")
         
         var alert: String = "alert"
-        var alertID: String = "ID"
-        var alertPayload: String = "Payload"
+        var alertID: String = "alertID"
+        var alertPayload: String = "payload"
         
-        //TODO: Retrieve alert data
+        
+//        let userInfoArray = userInfo["aps"] as Dictionary
+        
+//        print("User info as array is :\(userInfoArray)")
+        
+        
         
         
         showAlert("Alert: \(alert) \n ID: \(alertID) \n Payload: \(alertPayload)")
