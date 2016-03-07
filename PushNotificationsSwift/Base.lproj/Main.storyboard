@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QV8-76-0gx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Push Notifications-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Push Notifications" id="BYZ-38-t0r" customClass="ViewController" customModule="PushNotificationsSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOg-5N-RVd">
+                                <rect key="frame" x="237" y="72" width="127" height="30"/>
+                                <state key="normal" title="Is Push Supported"/>
+                                <connections>
+                                    <action selector="isPushSupported:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CE6-g0-1zB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1o-JO-gsL">
+                                <rect key="frame" x="246" y="110" width="108" height="30"/>
+                                <state key="normal" title="Register Device"/>
+                                <connections>
+                                    <action selector="registerDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S9G-Tw-4yf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-vc-Vvh">
+                                <rect key="frame" x="269" y="148" width="62" height="30"/>
+                                <state key="normal" title="Get Tags"/>
+                                <connections>
+                                    <action selector="getTags:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Prn-gK-uAg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-s0-kUv">
+                                <rect key="frame" x="237" y="186" width="127" height="30"/>
+                                <state key="normal" title="Subscribe To Tags"/>
+                                <connections>
+                                    <action selector="subscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRk-DG-E0j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-fs-LAj">
+                                <rect key="frame" x="239" y="224" width="123" height="30"/>
+                                <state key="normal" title="Get Subscriptions"/>
+                                <connections>
+                                    <action selector="getSubscriptions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QJa-yu-hhr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJm-eP-NYw">
+                                <rect key="frame" x="219" y="262" width="163" height="30"/>
+                                <state key="normal" title="Unsubscribe From Tags"/>
+                                <connections>
+                                    <action selector="unsubscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zr3-kO-vmk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afP-3z-WDh">
+                                <rect key="frame" x="239" y="300" width="123" height="30"/>
+                                <state key="normal" title="Unregister Device"/>
+                                <connections>
+                                    <action selector="unregisterDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Fe-DZ-4ne"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NJm-eP-NYw" firstAttribute="top" secondItem="Egi-fs-LAj" secondAttribute="bottom" constant="8" id="0J8-86-3s9"/>
+                            <constraint firstItem="Egi-fs-LAj" firstAttribute="top" secondItem="lqd-s0-kUv" secondAttribute="bottom" constant="8" id="Bv8-u7-36I"/>
+                            <constraint firstItem="NJm-eP-NYw" firstAttribute="centerX" secondItem="Egi-fs-LAj" secondAttribute="centerX" id="Cuv-bq-tKC"/>
+                            <constraint firstItem="d1o-JO-gsL" firstAttribute="top" secondItem="QOg-5N-RVd" secondAttribute="bottom" constant="8" id="G1c-KU-3cj"/>
+                            <constraint firstItem="d1o-JO-gsL" firstAttribute="centerX" secondItem="QOg-5N-RVd" secondAttribute="centerX" id="G7d-oC-m8A"/>
+                            <constraint firstItem="Egi-fs-LAj" firstAttribute="centerX" secondItem="lqd-s0-kUv" secondAttribute="centerX" id="NqZ-rI-caL"/>
+                            <constraint firstItem="afP-3z-WDh" firstAttribute="centerX" secondItem="NJm-eP-NYw" secondAttribute="centerX" id="Px8-OT-yPT"/>
+                            <constraint firstItem="LEr-vc-Vvh" firstAttribute="top" secondItem="d1o-JO-gsL" secondAttribute="bottom" constant="8" id="QWg-Z4-2uG"/>
+                            <constraint firstItem="LEr-vc-Vvh" firstAttribute="centerX" secondItem="d1o-JO-gsL" secondAttribute="centerX" id="VVG-rQ-28V"/>
+                            <constraint firstItem="QOg-5N-RVd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VjP-ie-m90"/>
+                            <constraint firstItem="lqd-s0-kUv" firstAttribute="top" secondItem="LEr-vc-Vvh" secondAttribute="bottom" constant="8" id="fMZ-PO-9V9"/>
+                            <constraint firstItem="QOg-5N-RVd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hNs-Eq-aOw"/>
+                            <constraint firstItem="lqd-s0-kUv" firstAttribute="centerX" secondItem="LEr-vc-Vvh" secondAttribute="centerX" id="i5I-y5-vnR"/>
+                            <constraint firstItem="afP-3z-WDh" firstAttribute="top" secondItem="NJm-eP-NYw" secondAttribute="bottom" constant="8" id="qIe-av-ciL"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Push Notifications" id="Dad-V8-lTA"/>
+                    <connections>
+                        <outlet property="getSubcriptionBtn" destination="Egi-fs-LAj" id="8nz-Jc-2bQ"/>
+                        <outlet property="subscribeBtn" destination="lqd-s0-kUv" id="IQI-gx-dYj"/>
+                        <outlet property="unregisterBtn" destination="afP-3z-WDh" id="df0-2Y-AMZ"/>
+                        <outlet property="unsubscribeBtn" destination="NJm-eP-NYw" id="FXq-sU-YvB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="545" y="561"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GNw-wi-ULH">
+            <objects>
+                <navigationController id="QV8-76-0gx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ZX-FC-ZNj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iqy-Dm-KvH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIn-rC-Vui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="561"/>
         </scene>
     </scenes>
 </document>

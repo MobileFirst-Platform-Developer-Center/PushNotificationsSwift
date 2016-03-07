@@ -1,0 +1,4 @@
+framework module IBMMobileFirstPlatformFoundationPush { umbrella header "IBMMobileFirstPlatformFoundationPush.h"
+    header "MFPPush.h"
+    header "WLResponse+MFPPushCategory.h"
+    export * module * { export * } }

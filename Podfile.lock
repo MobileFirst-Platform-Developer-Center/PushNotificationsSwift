@@ -1,0 +1,14 @@
+PODS:
+  - IBMMobileFirstPlatformFoundation (8.0.123)
+  - IBMMobileFirstPlatformFoundationPush (8.0.0):
+    - IBMMobileFirstPlatformFoundation (~> 8.0)
+
+DEPENDENCIES:
+  - IBMMobileFirstPlatformFoundation
+  - IBMMobileFirstPlatformFoundationPush
+
+SPEC CHECKSUMS:
+  IBMMobileFirstPlatformFoundation: 1be99c2dcd51a0b46073541713b4489362e3f00b
+  IBMMobileFirstPlatformFoundationPush: a71d24864e076bb87fc5b75106cc31f44aaa85c7
+
+COCOAPODS: 0.39.0
