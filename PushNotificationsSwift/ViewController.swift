@@ -68,6 +68,16 @@ extension ViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // viewWillAppear
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginRequired:", name: LoginRequiredNotificationKey, object: nil)
+    }
+    
+    // viewDidDisappear
+    override func viewDidDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }
 
 // MARK: Buttons
@@ -120,18 +130,18 @@ extension ViewController {
 
         // Get tags
         MFPPush.sharedInstance().getTags({(response: WLResponse!, error: NSError!) -> Void in
-            if error == nil {
-                if response.availableTags() == nil {
-                    self.showAlert("There are no available tags")
-                } else {
-                    self.tagsArray = response.availableTags()
-                    self.showAlert(String(self.tagsArray))
-                    print("Tags response: \(response)")
-                }
-            } else {
-                self.showAlert("Error \(error.description)")
-                print("Error \(error.description)")
-            }
+//            if error == nil {
+//                if response.availableTags() == nil {
+//                    self.showAlert("There are no available tags")
+//                } else {
+//                    self.tagsArray = response.availableTags()
+//                    self.showAlert(String(self.tagsArray))
+//                    print("Tags response: \(response)")
+//                }
+//            } else {
+//                self.showAlert("Error \(error.description)")
+//                print("Error \(error.description)")
+//            }
 
         })
     }
@@ -210,5 +220,26 @@ extension ViewController {
                 print("Error \(error.description)")
             }
         })
+    }
+}
+
+//MARK security
+extension ViewController{
+    // loginRequired
+    func loginRequired(notification:NSNotification){
+        let userInfo = notification.userInfo as! Dictionary<String, AnyObject!>        
+        self.performSegueWithIdentifier("showLogin", sender: userInfo)
+    }
+    
+    // prepareForSegue (for TimedOutSegue)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
+        if (segue.identifier == "showLogin") {
+            let userInfo = sender as! Dictionary<String, AnyObject!>
+            if let destination = segue.destinationViewController as? LoginViewController{
+                destination.errorViaSegue = userInfo["errorMsg"] as! String
+                destination.remainingAttemptsViaSegue = userInfo["remainingAttempts"] as! Int
+            }
+        }
     }
 }

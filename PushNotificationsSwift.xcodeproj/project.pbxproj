@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		190873A21C8DB2E700C60FD8 /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 190873A11C8DB2E700C60FD8 /* mfpclient.plist */; };
+		190873A61C8DBB6600C60FD8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190873A51C8DBB6600C60FD8 /* LoginViewController.swift */; };
+		190873A81C8DC04800C60FD8 /* RememberMeChallengeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190873A71C8DC04800C60FD8 /* RememberMeChallengeHandler.swift */; };
 		199FCA161C8D63D1000AAD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199FCA151C8D63D1000AAD5C /* AppDelegate.swift */; };
 		199FCA181C8D63D1000AAD5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199FCA171C8D63D1000AAD5C /* ViewController.swift */; };
 		199FCA1B1C8D63D1000AAD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA191C8D63D1000AAD5C /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		190873A11C8DB2E700C60FD8 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
+		190873A51C8DBB6600C60FD8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		190873A71C8DC04800C60FD8 /* RememberMeChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RememberMeChallengeHandler.swift; sourceTree = "<group>"; };
 		199FCA121C8D63D1000AAD5C /* PushNotificationsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushNotificationsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199FCA151C8D63D1000AAD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199FCA171C8D63D1000AAD5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				199FCA1C1C8D63D1000AAD5C /* Assets.xcassets */,
 				199FCA1E1C8D63D1000AAD5C /* LaunchScreen.storyboard */,
 				199FCA211C8D63D1000AAD5C /* Info.plist */,
+				190873A51C8DBB6600C60FD8 /* LoginViewController.swift */,
+				190873A71C8DC04800C60FD8 /* RememberMeChallengeHandler.swift */,
 			);
 			path = PushNotificationsSwift;
 			sourceTree = "<group>";
@@ -217,7 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190873A61C8DBB6600C60FD8 /* LoginViewController.swift in Sources */,
 				199FCA181C8D63D1000AAD5C /* ViewController.swift in Sources */,
+				190873A81C8DC04800C60FD8 /* RememberMeChallengeHandler.swift in Sources */,
 				199FCA161C8D63D1000AAD5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

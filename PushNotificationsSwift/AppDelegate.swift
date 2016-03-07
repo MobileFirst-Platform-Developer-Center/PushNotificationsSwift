@@ -16,6 +16,13 @@
 
 import UIKit
 
+let LoginRequiredNotificationKey = "com.sample.RememberMeSwift.LoginRequiredNotificationKey"
+let LoginSuccessNotificationKey = "com.sample.RememberMeSwift.LoginSuccessNotificationKey"
+let LoginFailureNotificationKey = "com.sample.RememberMeSwift.LoginFailureNotificationKey"
+let LoginCancelNotificationKey = "com.sample.RememberMeSwift.LoginCancelNotificationKey"
+let LoginNotificationKey = "com.sample.RememberMeSwift.LoginNotificationKey"
+let LogoutNotificationKey = "com.sample.RememberMeSwift.LogoutNotificationKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Initialize MFPPush
         MFPPush.sharedInstance().initialize()
+        RememberMeChallengeHandler()
         return true
     }
 
@@ -68,9 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recieved Notification \(userInfo)")
 
-        var alert: String = "alert"
-        var alertID: String = "alertID"
-        var alertPayload: String = "payload"
+        let alert: String = "alert"
+        let alertID: String = "alertID"
+        let alertPayload: String = "payload"
 
         showAlert("Alert: \(alert) \n ID: \(alertID) \n Payload: \(alertPayload)")
 
