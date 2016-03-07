@@ -25,8 +25,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var unsubscribeBtn: UIButton!
     @IBOutlet weak var unregisterBtn: UIButton!
 
-    let appDelaget = UIApplication.sharedApplication().delegate as! AppDelegate
-
     func enableButtons() {
         subscribeBtn.enabled = true
         getSubcriptionBtn.enabled = true
