@@ -1,6 +1,0 @@
-framework module IBMMobileFirstPlatformFoundationPush {
-  umbrella header "IBMMobileFirstPlatformFoundationPush.h"
-
-  export *
-  module * { export * }
-}
