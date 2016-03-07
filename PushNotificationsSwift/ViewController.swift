@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var getSubcriptionBtn: UIButton!
     @IBOutlet weak var unsubscribeBtn: UIButton!
     @IBOutlet weak var unregisterBtn: UIButton!
+    
+    // Array of tags to subscribe to
+    var tagsArray: [AnyObject] = ["Tag 1", "Tag 2"]
 
     func enableButtons() {
         subscribeBtn.enabled = true
@@ -121,7 +124,8 @@ extension ViewController {
                 if response.availableTags() == nil {
                     self.showAlert("There are no available tags")
                 } else {
-                    self.showAlert(String(response.availableTags()))
+                    self.tagsArray = response.availableTags()
+                    self.showAlert(String(self.tagsArray))
                     print("Tags response: \(response)")
                 }
             } else {
@@ -135,11 +139,8 @@ extension ViewController {
     @IBAction func subscribe(sender: AnyObject) {
         print("Subscribe entered")
 
-        // Array of tags to subscribe to
-        let tagsArray: [AnyObject] = ["Tag 1", "Tag 2"]
-
         // Subscribe to tags
-        MFPPush.sharedInstance().subscribe(tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
+        MFPPush.sharedInstance().subscribe(self.tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
                 self.showAlert("Subscribed successfully")
                 print("Subscribed successfully response: \(response)")
@@ -180,11 +181,8 @@ extension ViewController {
     @IBAction func unsubscribe(sender: AnyObject) {
         print("Unsubscribe entered")
 
-        // Array of tags to unsubscribe from
-        let tagsArray: [String] = ["Tag 1", "Tag 2"]
-
         // Unsubscribe from tags
-        MFPPush.sharedInstance().unsubscribe(tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
+        MFPPush.sharedInstance().unsubscribe(self.tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
                 self.showAlert("Unsubscribed successfully")
                 print(String(response.description))
