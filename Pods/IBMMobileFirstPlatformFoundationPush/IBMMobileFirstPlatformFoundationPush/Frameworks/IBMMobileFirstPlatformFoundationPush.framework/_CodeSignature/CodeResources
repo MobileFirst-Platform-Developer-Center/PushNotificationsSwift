@@ -6,42 +6,42 @@
 	<dict>
 		<key>Headers/IBMMobileFirstPlatformFoundationPush.h</key>
 		<data>
-		OlI/2NINKRNjpZZUqr4qVxAjcKM=
+		j/TVerAQH69XPuI/jl2n15KV3Lw=
 		</data>
 		<key>Headers/MFPPush.h</key>
 		<data>
-		xe3pJZ32RuRA+8/4OOppu8GpDvY=
+		otB8wWHzS3TiyBCgzSWEk+NpcV8=
 		</data>
 		<key>Headers/WLResponse+MFPPushCategory.h</key>
 		<data>
-		+85nMGWaLUb+Oh9ANZMH9HzbuIs=
+		oe2ylKOGQxAG2kQndMh+SwxAtvs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		vqc3rqVEBe/6vrBemu3cK9a+Jmk=
+		kP2MTWZBsSjZE4tK8poPy7LC8Ig=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		4/89WCid6UuJa/J7++aQLYo031U=
+		3TKS1Cth3ETnnsipBHaY1jlccO0=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/IBMMobileFirstPlatformFoundationPush.h</key>
 		<data>
-		OlI/2NINKRNjpZZUqr4qVxAjcKM=
+		j/TVerAQH69XPuI/jl2n15KV3Lw=
 		</data>
 		<key>Headers/MFPPush.h</key>
 		<data>
-		xe3pJZ32RuRA+8/4OOppu8GpDvY=
+		otB8wWHzS3TiyBCgzSWEk+NpcV8=
 		</data>
 		<key>Headers/WLResponse+MFPPushCategory.h</key>
 		<data>
-		+85nMGWaLUb+Oh9ANZMH9HzbuIs=
+		oe2ylKOGQxAG2kQndMh+SwxAtvs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		4/89WCid6UuJa/J7++aQLYo031U=
+		3TKS1Cth3ETnnsipBHaY1jlccO0=
 		</data>
 	</dict>
 	<key>rules</key>

@@ -1,13 +1,12 @@
 /*
  *  Licensed Materials - Property of IBM
- *  5725-I43 (C) Copyright IBM Corp. 2015, 2016. All Rights Reserved.
+ *  5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
  *  US Government Users Restricted Rights - Use, duplication or
  *  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
  */
 
 #import <Foundation/Foundation.h>
 #import <IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation.h>
-#import <objc/message.h>
 
 extern NSString * const MFPPushErrorDomain;
 
@@ -74,54 +73,12 @@ enum{
 -(void) getTags:(void(^) (WLResponse *response, NSError* error)) completionHandler;
 
 /**
- * This method sets the push notification options. If used, should be called before registerDevice()
- *
- * @param options - Mandatory. iOS notification options
- *					{ alert: boolean, badge: boolean, sound: boolean, categories: NSSet }
- *					where 
- *						alert - To enable displaying alert messages
- *						badge - To enable badge icons
- *						sound - To enable playing sound
- *						categories - iOS8 interactive notification categories
- *					for example
- *						UIMutableUserNotificationAction *acceptAction = [[UIMutableUserNotificationAction alloc] init];
- *						acceptAction.identifier = @"OK";
- *						acceptAction.title = @"OK";
- *      
- *						UIMutableUserNotificationAction *rejetAction = [[UIMutableUserNotificationAction alloc] init];
- *						rejetAction.identifier = @"NOK";
- *						rejetAction.title = @"NOK";
- *       
- *						UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
- *						category.identifier = @"poll";
- *						[category setActions:@[acceptAction,rejetAction] forContext:UIUserNotificationActionContextDefault];
- *						[category setActions:@[acceptAction,rejetAction] forContext:UIUserNotificationActionContextMinimal];
- *
- *						NSDictionary *options = @{
- *							@"alert": @true,
- *							@"badge": @true,
- *							@"sound": @true,
- *							@"categories": [NSSet setWithObject:category]
- *						}
- *                  
- *
- */
--(void) setOptions: (NSDictionary*)options;
-
-/**
  * This method registers the device with the push service
  *
+ * @param deviceToken - the device token received from APNS.
  * @param completionHandler - returns a WLResponse or NSError
  */
--(void) registerDevice: (void(^) (WLResponse *response, NSError* error)) completionHandler;
-
-
-/**
- * This method sends the device token to be registered with the push service
- *
- * @param deviceToken - the device token received from APNS.
- */
--(void) sendDeviceToken: (NSData*) deviceToken;
+-(void) registerDevice: (NSData*) deviceToken completionHandler: (void(^) (WLResponse *response, NSError* error)) completionHandler;
 
 /**
  * This method subscribes the device to the given tags
