@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Push Notifications-->
@@ -110,37 +111,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-FH-FUC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-FH-FUC">
                                 <rect key="frame" x="20" y="72" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-Nh-9dn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-Nh-9dn">
                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-rf-v8A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-rf-v8A">
                                 <rect key="frame" x="19" y="148" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="5fp-pM-IG1" eventType="touchUpInside" id="fj6-x3-r3H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-eR-2G9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-eR-2G9">
                                 <rect key="frame" x="79" y="148" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="5fp-pM-IG1" eventType="touchUpInside" id="z0q-Q6-0J7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-Re-fao">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-Re-fao">
                                 <rect key="frame" x="19" y="186" width="561" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV3-IZ-Ut8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV3-IZ-Ut8">
                                 <rect key="frame" x="19" y="215" width="561" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -148,6 +149,24 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xp9-Nh-9dn" firstAttribute="top" secondItem="ixV-FH-FUC" secondAttribute="bottom" constant="8" id="DbH-0u-swx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Xp9-Nh-9dn" secondAttribute="leading" id="Dto-C5-GBo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VV3-IZ-Ut8" secondAttribute="trailing" id="F2F-Ax-ahM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xp9-Nh-9dn" secondAttribute="trailing" id="QZg-8J-8If"/>
+                            <constraint firstItem="vUQ-rf-v8A" firstAttribute="top" secondItem="Xp9-Nh-9dn" secondAttribute="bottom" constant="8" id="Qgh-ie-40O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NmA-Re-fao" secondAttribute="trailing" id="Txs-Vk-kqC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ixV-FH-FUC" secondAttribute="leading" id="UCa-D9-JD9"/>
+                            <constraint firstItem="NmA-Re-fao" firstAttribute="top" secondItem="vUQ-rf-v8A" secondAttribute="bottom" constant="8" id="ZNZ-gN-qcu"/>
+                            <constraint firstItem="ixV-FH-FUC" firstAttribute="top" secondItem="qQE-pM-j0I" secondAttribute="bottom" constant="8" id="bpr-Yr-xEJ"/>
+                            <constraint firstItem="MHS-eR-2G9" firstAttribute="top" secondItem="Xp9-Nh-9dn" secondAttribute="bottom" constant="8" id="bwN-iw-lLD"/>
+                            <constraint firstItem="MHS-eR-2G9" firstAttribute="leading" secondItem="vUQ-rf-v8A" secondAttribute="trailing" constant="12" id="dH6-nO-O5p"/>
+                            <constraint firstItem="VV3-IZ-Ut8" firstAttribute="leading" secondItem="lmu-za-wYg" secondAttribute="leadingMargin" constant="-1" id="g2F-Pk-Svf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ixV-FH-FUC" secondAttribute="trailing" id="p8N-V5-l7e"/>
+                            <constraint firstItem="vUQ-rf-v8A" firstAttribute="leading" secondItem="lmu-za-wYg" secondAttribute="leadingMargin" constant="-1" id="sjk-yB-Q1o"/>
+                            <constraint firstItem="VV3-IZ-Ut8" firstAttribute="top" secondItem="NmA-Re-fao" secondAttribute="bottom" constant="8" id="x1Q-dB-bkh"/>
+                            <constraint firstItem="NmA-Re-fao" firstAttribute="leading" secondItem="lmu-za-wYg" secondAttribute="leadingMargin" constant="-1" id="zr8-fM-xCa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="errorLabel" destination="NmA-Re-fao" id="ihV-se-eu4"/>
