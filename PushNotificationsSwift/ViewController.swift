@@ -134,20 +134,19 @@ extension ViewController {
 //            var tempTagsArray: Array[String]
             
             
-            
             print("The response is: \(response)")
             print("The response text is \(response.responseText)")
             if error == nil {
-//                if response.availableTags == nil {
-//                    self.showAlert("There are no available tags")
-//                } else {
-//                    self.tagsArray = response.availableTags()
-//                    self.showAlert(String(self.tagsArray))
-//                    print("Tags response: \(response)")
-//                }
-//            } else {
-//                self.showAlert("Error \(error.description)")
-//                print("Error \(error.description)")
+                if response.availableTags == nil {
+                    self.showAlert("There are no available tags")
+                } else {
+                    self.tagsArray = response.availableTags()
+                    self.showAlert(String(self.tagsArray))
+                    print("Tags response: \(response)")
+                }
+            } else {
+                self.showAlert("Error \(error.description)")
+                print("Error \(error.description)")
             }
 
         })
