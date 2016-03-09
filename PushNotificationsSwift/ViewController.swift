@@ -115,39 +115,37 @@ extension ViewController {
             if error == nil {
                 self.enableButtons()
                 self.showAlert("Registered successfully")
-
+                
                 print(response.description)
             } else {
                 self.showAlert("Registrations failed.  Error \(error.description)")
                 print(error.description)
             }
-
         })
     }
 
     @IBAction func getTags(sender: AnyObject) {
         print("Get tags entered")
-
+        
         // Get tags
         MFPPush.sharedInstance().getTags({(response: WLResponse!, error: NSError!) -> Void in
             
 //            var tempTagsArray: Array[String]
             
-            
             print("The response is: \(response)")
             print("The response text is \(response.responseText)")
-            if error == nil {
-                if response.availableTags == nil {
-                    self.showAlert("There are no available tags")
-                } else {
-                    self.tagsArray = response.availableTags()
-                    self.showAlert(String(self.tagsArray))
-                    print("Tags response: \(response)")
-                }
-            } else {
-                self.showAlert("Error \(error.description)")
-                print("Error \(error.description)")
-            }
+//            if error == nil {
+//                if response.availableTags == nil {
+//                    self.showAlert("There are no available tags")
+//                } else {
+//                    self.tagsArray = response.availableTags()
+//                    self.showAlert(String(self.tagsArray))
+//                    print("Tags response: \(response)")
+//                }
+//            } else {
+//                self.showAlert("Error \(error.description)")
+//                print("Error \(error.description)")
+//            }
 
         })
     }
@@ -229,7 +227,7 @@ extension ViewController {
     }
 }
 
-//MARK security
+//MARK: Security
 extension ViewController{
     // loginRequired
     func loginRequired(notification:NSNotification){
