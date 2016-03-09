@@ -130,8 +130,15 @@ extension ViewController {
 
         // Get tags
         MFPPush.sharedInstance().getTags({(response: WLResponse!, error: NSError!) -> Void in
-//            if error == nil {
-//                if response.availableTags() == nil {
+            
+//            var tempTagsArray: Array[String]
+            
+            
+            
+            print("The response is: \(response)")
+            print("The response text is \(response.responseText)")
+            if error == nil {
+//                if response.availableTags == nil {
 //                    self.showAlert("There are no available tags")
 //                } else {
 //                    self.tagsArray = response.availableTags()
@@ -141,7 +148,7 @@ extension ViewController {
 //            } else {
 //                self.showAlert("Error \(error.description)")
 //                print("Error \(error.description)")
-//            }
+            }
 
         })
     }
