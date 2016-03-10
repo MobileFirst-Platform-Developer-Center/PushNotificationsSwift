@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 
     func showAlert(message: String) {
         let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertDialog.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        alertDialog.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
 
         presentViewController(alertDialog, animated: true, completion: nil)
     }
@@ -131,23 +131,21 @@ extension ViewController {
         
         // Get tags
         MFPPush.sharedInstance().getTags({(response: WLResponse!, error: NSError!) -> Void in
-            
-//            var tempTagsArray: Array[String]
-            
-            print("The response is: \(response)")
-            print("The response text is \(response.responseText)")
-//            if error == nil {
-//                if response.availableTags == nil {
-//                    self.showAlert("There are no available tags")
-//                } else {
-//                    self.tagsArray = response.availableTags()
-//                    self.showAlert(String(self.tagsArray))
-//                    print("Tags response: \(response)")
-//                }
-//            } else {
-//                self.showAlert("Error \(error.description)")
-//                print("Error \(error.description)")
-//            }
+            if error == nil {
+                print("The response is: \(response)")
+                print("The response text is \(response.responseText)")
+                if response.availableTags().isEmpty == true {
+                    self.tagsArray = []
+                    self.showAlert("There are no available tags")
+                } else {
+                    self.tagsArray = response.availableTags()
+                    self.showAlert(String(self.tagsArray))
+                    print("Tags response: \(response)")
+                }
+            } else {
+                self.showAlert("Error \(error.description)")
+                print("Error \(error.description)")
+            }
 
         })
     }
