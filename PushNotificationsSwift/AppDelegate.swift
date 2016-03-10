@@ -77,6 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recieved Notification \(userInfo)")
+        
+        //TODO: Update values to received data
 
         let alert: String = "alert"
         let alertID: String = "alertID"
