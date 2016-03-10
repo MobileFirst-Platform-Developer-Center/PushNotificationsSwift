@@ -15,6 +15,8 @@
  */
 
 import UIKit
+import IBMMobileFirstPlatformFoundation
+import IBMMobileFirstPlatformFoundationPush
 
 let LoginRequiredNotificationKey = "com.sample.RememberMeSwift.LoginRequiredNotificationKey"
 let LoginSuccessNotificationKey = "com.sample.RememberMeSwift.LoginSuccessNotificationKey"
