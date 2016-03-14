@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Check if application was opened from a notification
         if let userInfo = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject: AnyObject] {
             //handle your notification
-            print("Recieved Notification in didFinishLaunchingWithOptions \(userInfo)")
+            print("Received Notification in didFinishLaunchingWithOptions \(userInfo)")
             
         }
         
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("Recieved Notification in didReceiveRemoteNotification \(userInfo)")
+        print("Received Notification in didReceiveRemoteNotification \(userInfo)")
         
         // display the alert body
         if let notification = userInfo["aps"] as? NSDictionary,
@@ -57,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let body = alert["body"] as? String {
                 showAlert(body)
         }
-        
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
