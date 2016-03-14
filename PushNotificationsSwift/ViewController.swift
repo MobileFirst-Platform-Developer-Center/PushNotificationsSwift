@@ -101,17 +101,6 @@ extension ViewController {
     @IBAction func registerDevice(sender: AnyObject) {
         print("Register device entered")
 
-        // Reference to system version as float
-        let systemVersion: Float = (UIDevice.currentDevice().systemVersion as NSString).floatValue
-
-        // Verify version and enable notifications accordingly at the device level
-        if systemVersion >= 8.0 {
-            let userNotificationTypes = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
-            UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationTypes)
-        } else {
-            UIApplication.sharedApplication().registerForRemoteNotifications()
-        }
-
         // Register device
         MFPPush.sharedInstance().registerDevice({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
