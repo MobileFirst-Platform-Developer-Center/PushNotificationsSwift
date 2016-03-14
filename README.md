@@ -15,7 +15,7 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notificatio
 4. Run the app by clicking the **Run** button.
 
 
-**[Sending a notification](../sending-push-notifications):**
+**[Sending a notification](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/sending-push-notifications):**
 
 * Tag notification
     * Use the **MobileFirst Operations Console → [your application] → Push → Send Push tab**.
