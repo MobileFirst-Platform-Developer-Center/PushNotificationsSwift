@@ -70,7 +70,7 @@
 
 
 /**
- * This method is the success delegate for submitLoginForm or submitAdapterAuthentication.
+ * This method is the success delegate for submitLoginForm
  * 
  * This method is called when a successful HTTP response is received (200 OK). This method does not indicate whether the challenge was successful or not. A 200 HTTP response can flow back indicating problems with authentication on the server or requesting additional information.
  * 
@@ -88,7 +88,7 @@
 
 
 /**
- * This method is the failure delegate for submitLoginForm or submitAdapterAuthentication.
+ * This method is the failure delegate for submitLoginForm
  * 
  * This method is called when a response does not have a 200 HTTP status code. This method does not indicate whether the challenge was successful or not. In some cases onFailure is an indication of a normal challenge handling sequence.
  * 
@@ -103,14 +103,5 @@
 -(void) onFailure:(WLFailResponse *)response;
 
 
-/**
- * You use this method to invoke a procedure from the Challenge Handler.
- *
- * @param wlInvocationData The invocation data, for example the name of the procedure, or the name of the method.
- * @param requestOptions A map with the following keys and values:
- * timeout – NSNumber:
- * The time, in milliseconds, for this invokeProcedure to wait before the request fails with WLErrorCodeRequestTimeout. The default timeout is 10,000 milliseconds. To disable the timeout, set this parameter to 0.
- * invocationContext: An object that is returned with WLResponse to the delegate methods. You can use this object to distinguish different invokeProcedure calls. 
- **/
--(void) submitAdapterAuthentication: (WLProcedureInvocationData *) wlInvocationData options:(NSDictionary *)requestOptions;
+
 @end
