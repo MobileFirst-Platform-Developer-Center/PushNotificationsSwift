@@ -78,15 +78,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recieved Notification \(userInfo)")
         
-        //TODO: Update values to received data
+        // display the alert body
+        if let notification = userInfo["aps"] as? NSDictionary,
+            let alert = notification["alert"] as? NSDictionary,
+            let body = alert["body"] as? String {
+                showAlert(body)
+        }
 
-        let alert: String = "alert"
-        let alertID: String = "alertID"
-        let alertPayload: String = "payload"
-
-        showAlert("Alert: \(alert) \n ID: \(alertID) \n Payload: \(alertPayload)")
-
-        showAlert(userInfo.description)
     }
 
 }
