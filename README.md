@@ -8,12 +8,23 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notificatio
 
 ### Usage
 
-1. From a command-line window, navigate to the project's root folder and run the command: `mfpdev app register`.
-2. In the MobileFirst console, under **Applications** → **PushNotificationsSwift** → **Security** → **Map scope elements to security checks**, add a mapping for `push.mobileclient`.
-3. Via the MobileFirst Operations Console, setup the MobileFirst Server with the APNS certificate, and add tags.
-4. Import the project to Xcode, and run the sample by clicking the **Run* button.
+1. Import the project to Xcode using the .xcworkspace file.
+2. Configure the project with your bundleId (based on bundleId that you have created for your push notifications certificate .p12 file).
+3. From a **Command-line** window, navigate to the project's root folder and run the command: `mfpdev app register`.
+4. Perform the required scope mapping for **push.mobileclient**.
+4. Run the app by clicking the **Run** button.
 
-Notes:
+
+**[Sending a notification](../sending-push-notifications):**
+
+* Tag notification
+    * Use the **MobileFirst Operations Console → [your application] → Push → Send Push tab**.
+* Authenticated notification:
+    * Deploy the [**UserLogin** sample Security Check](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/user-authentication/security-check).
+    * In **MobileFirst Operations Console → [your application] → Security tab**, map the **push.mobileclient** scope to the **UserLogin** Security Check.
+    * Follow the instructions for [REST APIs](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/sending-push-notifications#rest-apis) to send the notification.
+
+**Notes:**
 
 * Must be tested on physical devices.
 * The BundleID must relate to an AppID configured with push notifications.
