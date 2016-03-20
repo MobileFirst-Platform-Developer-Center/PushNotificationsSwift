@@ -75,7 +75,7 @@
 				199FCA1E1C8D63D1000AAD5C /* LaunchScreen.storyboard */,
 				199FCA211C8D63D1000AAD5C /* Info.plist */,
 				190873A51C8DBB6600C60FD8 /* LoginViewController.swift */,
-				190873A71C8DC04800C60FD8 /* RememberMeChallengeHandler.swift */,
+				190873A71C8DC04800C60FD8 /* UserLoginChallengeHandler.swift */,
 			);
 			path = PushNotificationsSwift;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			files = (
 				190873A61C8DBB6600C60FD8 /* LoginViewController.swift in Sources */,
 				199FCA181C8D63D1000AAD5C /* ViewController.swift in Sources */,
-				190873A81C8DC04800C60FD8 /* RememberMeChallengeHandler.swift in Sources */,
+				190873A81C8DC04800C60FD8 /* UserLoginChallengeHandler.swift in Sources */,
 				199FCA161C8D63D1000AAD5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
