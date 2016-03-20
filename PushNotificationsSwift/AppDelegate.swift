@@ -18,12 +18,12 @@ import UIKit
 import IBMMobileFirstPlatformFoundation
 import IBMMobileFirstPlatformFoundationPush
 
-let LoginRequiredNotificationKey = "com.sample.RememberMeSwift.LoginRequiredNotificationKey"
-let LoginSuccessNotificationKey = "com.sample.RememberMeSwift.LoginSuccessNotificationKey"
-let LoginFailureNotificationKey = "com.sample.RememberMeSwift.LoginFailureNotificationKey"
-let LoginCancelNotificationKey = "com.sample.RememberMeSwift.LoginCancelNotificationKey"
-let LoginNotificationKey = "com.sample.RememberMeSwift.LoginNotificationKey"
-let LogoutNotificationKey = "com.sample.RememberMeSwift.LogoutNotificationKey"
+let LoginRequiredNotificationKey = "com.sample.PushNotificationsSwift.LoginRequiredNotificationKey"
+let LoginSuccessNotificationKey = "com.sample.PushNotificationsSwift.LoginSuccessNotificationKey"
+let LoginFailureNotificationKey = "com.sample.PushNotificationsSwift.LoginFailureNotificationKey"
+let LoginCancelNotificationKey = "com.sample.PushNotificationsSwift.LoginCancelNotificationKey"
+let LoginNotificationKey = "com.sample.PushNotificationsSwift.LoginNotificationKey"
+let LogoutNotificationKey = "com.sample.PushNotificationsSwift.LogoutNotificationKey"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,23 +34,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initialize MFPPush
         MFPPush.sharedInstance().initialize()
-        
+
         // Initialize challenge handler
-        _ = RememberMeChallengeHandler()
-        
+        _ = UserLoginChallengeHandler()
+
         // Check if application was opened from a notification
         if let userInfo = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject: AnyObject] {
             //handle your notification
             print("Received Notification in didFinishLaunchingWithOptions \(userInfo)")
-            
+
         }
-        
+
         return true
     }
-    
+
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Received Notification in didReceiveRemoteNotification \(userInfo)")
-        
+
         // display the alert body
         if let notification = userInfo["aps"] as? NSDictionary,
             let alert = notification["alert"] as? NSDictionary,
@@ -58,10 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 showAlert(body)
         }
     }
-    
+
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("didRegisterForRemoteNotificationsWithDeviceToken: Registered device successfully")
-        
+
         // Registers device token with server.
         MFPPush.sharedInstance().sendDeviceToken(deviceToken)
     }
