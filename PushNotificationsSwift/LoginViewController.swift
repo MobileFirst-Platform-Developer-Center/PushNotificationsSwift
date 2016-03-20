@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateLabels:", name: LoginRequiredNotificationKey, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginSuccess", name: LoginSuccessNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cleanFieldsAndLabels", name: LoginFailureNotificationKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginFailure:", name: LoginFailureNotificationKey, object: nil)
     }
 
     override func viewDidLoad() {
@@ -91,12 +91,30 @@ class LoginViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    // cleanFieldsAndLabels (triggered by LoginFailure notification)
-    func cleanFieldsAndLabels(){
+    // loginFailure (triggered by LoginFailure notification)
+    func loginFailure(notification:NSNotification){
         self.usernameInput.text = ""
         self.passwordInput.text = ""
         self.remainingLabel.text = ""
         self.errorLabel.text = ""
+        
+        let userInfo = notification.userInfo as! Dictionary<String, AnyObject!>
+        let errorMsg = userInfo["errorMsg"] as! String
+        
+        let alert = UIAlertController(title: "Error",
+            message: errorMsg,
+            preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+            self.navigationController?.popViewControllerAnimated(true)
+        })
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+
+        
+        
     }
     
     // viewDidDisappear

@@ -17,7 +17,7 @@
 import UIKit
 import IBMMobileFirstPlatformFoundation
 
-class RememberMeChallengeHandler: WLChallengeHandler {
+class UserLoginChallengeHandler: WLChallengeHandler {
     
     var isChallenged: Bool
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -95,28 +95,14 @@ class RememberMeChallengeHandler: WLChallengeHandler {
     // handleFailure
     override func handleFailure(failure: [NSObject : AnyObject]!) {
         self.isChallenged = false
-        if let errMsg = failure["failure"] as? String {
-            showError(errMsg)
+        var errorMsg: String!
+        if failure["failure"] != nil {
+            errorMsg = failure["failure"] as! String
         }
         else{
-            showError("Unknown error")
+            errorMsg = "Unknown error"
         }
-        NSNotificationCenter.defaultCenter().postNotificationName(LoginFailureNotificationKey, object: nil)
-    }
-    
-    // showError
-    func showError(errorMsg: String){
-        let alert = UIAlertController(title: "Error",
-            message: errorMsg,
-            preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            let topController = UIApplication.sharedApplication().keyWindow!.rootViewController! as UIViewController
-            topController.presentViewController(alert,
-                animated: true,
-                completion: nil)
-        }
+        NSNotificationCenter.defaultCenter().postNotificationName(LoginFailureNotificationKey, object: nil, userInfo: ["errorMsg":errorMsg!])
     }
 
 }
