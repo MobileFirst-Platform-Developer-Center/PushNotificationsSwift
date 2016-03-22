@@ -11,7 +11,9 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notificatio
 1. Import the project to Xcode using the .xcworkspace file.
 2. Configure the project with your bundleId (based on bundleId that you have created for your push notifications certificate .p12 file).
 3. From a **Command-line** window, navigate to the project's root folder and run the command: `mfpdev app register`.
-4. In the MobileFirst console, under **Applications** → **PushNotificationsAndroid** → **Security** → **Map scope elements to security checks**, add a mapping for `push.mobileclient`.
+4. In the MobileFirst console: 
+	* Under **Applications** → **PushNotificationsSwift** → **Security** → **Map scope elements to security checks**, add a mapping for `push.mobileclient`.
+	* Under **Applications** → **PushNotificationsSwift** → **Push** → **Push Settings**, upload your PKCS 12 (.p12) file and password.
 5. Run the app by clicking the **Run** button.
 
 
