@@ -47,12 +47,8 @@ enum {
  */
 @interface WLClient : NSObject {
     
-@private
-	
-	// PUSH NOTIFICATION
-	NSMutableArray *pending;
-	NSMutableDictionary *registeredEventSourceIDs;
-    
+@private	
+  
     //Challenge handlers
     NSMutableDictionary *challengeHandlers;
 	
@@ -67,8 +63,6 @@ extern NSMutableDictionary *piggyBackData;
  * Sets an authentication handler that WLClient can use for authentication-related tasks. 
  * This method must be called for WLClient to be able to access protected resources in the IBM MobileFirst Platform server.
  */
-@property (nonatomic, strong) NSMutableDictionary *registeredEventSourceIDs;
-
 @property (nonatomic) BOOL isInitialized;
 
 @property (readwrite) NSInteger interval;
@@ -126,71 +120,6 @@ extern NSMutableDictionary *piggyBackData;
 
 
 -(void) sendInvoke:(WLProcedureInvocationData *)invocationData withDelegate:(id <WLDelegate>)delegate options:(NSDictionary *)options ignoreChallenges: (BOOL)ignoreChallenges;
-
-/**
- * This method subscribes the application to receive push notifications from the specified event source and adapter.
- *
- * @param deviceToken The token received from the method application:didRegisterForRemoteNotificationsWithDeviceToken. Save the device token in case unsubscribedWithToken:adapter:eventSource:delegate: is called.
- * @param adapter The name of the adapter.
- * @param eventSource The name of the event source.
- * @param eventSourceID An ID that you assign to the event source that is returned by the IBM MobileFirst Platform Server with each notification from this event source. You can use the ID in your notification callback function to identify the notification event source.
- * The ID is passed on the notification payload. To save space in the notification payload, pass a short integer, otherwise it is used to pass the adapter and event source names.
- * @param notificationType Constants that indicate the types of notifications that the application accepts. For more information, see the <a href="http://developerns.apple.com/library/ios/" \l "documentation/UIKit/Reference/UIApplication_Class/Reference/Reference.html"> link Apple documentation.</a>
- * @param delegate A standard IBM MobileFirst Platform delegate with onSuccess and onFailure methods to indicate success or failure of the subscription to the IBM MobileFirst Platform Server.
- */
-#if !TARGET_OS_WATCH
--(void) subscribeWithToken:(NSData *)deviceToken adapter:(NSString *)adapter eventSource: (NSString *)eventSource eventSourceID: (int)eventSourceID notificationType:(UIRemoteNotificationType) types delegate:(id <WLDelegate>)delegate;
-#endif
-/**
- * This method subscribes the application to receive push notifications from the specified event source and adapter.
- *
- * @param deviceToken The token received from the method application:didRegisterForRemoteNotificationsWithDeviceToken. Save the device token in case unsubscribedWithToken:adapter:eventSource:delegate: is called.
- * @param adapter The name of the adapter.
- * @param eventSource The name of the event source.
- * @param eventSourceID An ID that you assign to the event source that is returned by the IBM MobileFirst Platform Server with each notification from this event source. You can use the ID in your notification callback function to identify the notification event source.
- * The ID is passed on the notification payload. To save space in the notification payload, pass a short integer, otherwise it is used to pass the adapter and event source names.
- * @param notificationType Constants that indicate the types of notifications that the application accepts. For more information, see the <a href="http://developerns.apple.com/library/ios/" \l "documentation/UIKit/Reference/UIApplication_Class/Reference/Reference.html"> link Apple documentation.</a>
- * @param delegate A standard IBM MobileFirst Platform delegate with onSuccess and onFailure methods to indicate success or failure of the subscription to the IBM MobileFirst Platform Server.
- * @param options Optional. This parameter contains data that is passed to the IBM MobileFirst Platform Server, which is used by the adapter.
- */
-#if !TARGET_OS_WATCH
--(void) subscribeWithToken:(NSData *)deviceToken adapter:(NSString *)adapter eventSource: (NSString *)eventSource eventSourceID: (int)eventSourceID notificationType:(UIRemoteNotificationType) types delegate:(id <WLDelegate>)delegate options:(NSDictionary *)options;
-#endif
-/**
- * This method unsubscribes to notifications from the specified event source in the specified adapter.
- *
- * @param adapter The name of the adapter.
- * @param eventSource TThe name of the event source.
- * @param delegate A standard IBM MobileFirst Platform delegate with the onSuccess and onFailure methods to indicate success or failure of the unsubscription to the IBM MobileFirst Platform Server.
- */
--(void) unsubscribeAdapter:(NSString *)adapter eventSource: (NSString *)eventSource delegate:(id <WLDelegate>)delegate;
-
-/**
- * This method returns true if the current logged-in user on the current device is already subscribed to the adapter and event source. 
- * The method checks the information received from the server in the success response for the login request. If the information that is sent from the server is not received, or if there is no subscription, this method returns false.
- *
- * @param adapter The name of the adapter.
- * @param eventSource TThe name of the event source.
- */
--(BOOL) isSubscribedToAdapter:(NSString *)adapter eventSource:(NSString *)eventSource;
-
-/**
- * This method compares the device token to the one registered in the IBM MobileFirst Platform Server with the current logged-in user and current device. If the device token is different, the method sends the updated token to the server.
- *
- * The registered device token from the server is received in the success response for the login request. It is available without the need for an additional server call to retrieve. If a registered device token from the server is not available in the application, this method sends an update to the server with the device token.
- *
- * @param deviceToken The token received from the method <code>application:didRegisterForRemoteNotificationsWithDeviceToken</code>. Save the device token in case <code>unsubscribedWithToken:adapter:eventSource:delegate</code> is called.
- * @param delegate A standard IBM MobileFirst Platform delegate with the onSuccess and onFailure methods to indicate success or failure of the unsubscription to the IBM MobileFirst Platform Server.
- */
--(void) updateDeviceToken:(NSData *)deviceToken  delegate:(id <WLDelegate>)delegate;
-
-/**
- * This method returns the eventSourceID that the IBM MobileFirst Platform Server sends in the push notification.
- *
- * @param userInfo The NSDictionary received in the application:didReceiveRemoteNotification method.
- */
--(int) getEventSourceIDFromUserInfo:(NSDictionary *)userInfo;
-
 
 /**
  * You can use this method to register a custom Challenge Handler, which is a class that inherits from ChallengeHandler. See example 1: Adding a custom Challenge Handler.
@@ -255,7 +184,7 @@ extern NSMutableDictionary *piggyBackData;
  * <li>For hybrid applications: This call does not clean the HTTP client context saved in JavaScript.
  * For hybrid applications, it is recommended to set the server URL by using the following JavaScript function: <code>WL.App.setServerUrl</code>.</li>
  * <li>If the app uses push notification, it is the developer's responsibility to unsubscribe from the previous server and subscribe to the new server.
- * For more information on push notification, see <code>WLPush</code>.</li>
+ * For more information on push notification, see <code>MFPPush</code>.</li>
  * </ul>
  *
  * Example:

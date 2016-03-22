@@ -29,9 +29,9 @@
 		199FCA1C1C8D63D1000AAD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199FCA1F1C8D63D1000AAD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199FCA211C8D63D1000AAD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3656C0E43260F836759D9E09 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		61BE6F231423150A93D6FC08 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3ABDC3F43E59253B00644B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6DB12FEFFB4AFB618785B8DE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		869C43EF285D97879070C116 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 				199FCA141C8D63D1000AAD5C /* PushNotificationsSwift */,
 				199FCA131C8D63D1000AAD5C /* Products */,
 				3F2DEEDBE850F2AA99E6EC25 /* Frameworks */,
-				84FD7E21639361DB23D9A441 /* Pods */,
+				E7C41FEBC31EC6A651539D76 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,11 +88,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		84FD7E21639361DB23D9A441 /* Pods */ = {
+		E7C41FEBC31EC6A651539D76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A3ABDC3F43E59253B00644B1 /* Pods.debug.xcconfig */,
-				3656C0E43260F836759D9E09 /* Pods.release.xcconfig */,
+				869C43EF285D97879070C116 /* Pods.debug.xcconfig */,
+				6DB12FEFFB4AFB618785B8DE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 				199FCA0E1C8D63D1000AAD5C /* Sources */,
 				199FCA0F1C8D63D1000AAD5C /* Frameworks */,
 				199FCA101C8D63D1000AAD5C /* Resources */,
-				4A5D90B6BB58844FFAABE095 /* Embed Pods Frameworks */,
+				C8FB038C7D4B46DC3F1405DA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,7 +130,6 @@
 				TargetAttributes = {
 					199FCA111C8D63D1000AAD5C = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = TN6YQNGLXP;
 					};
 				};
 			};
@@ -167,7 +166,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A5D90B6BB58844FFAABE095 /* Embed Pods Frameworks */ = {
+		C8FB038C7D4B46DC3F1405DA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,12 +302,12 @@
 		};
 		199FCA251C8D63D1000AAD5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3ABDC3F43E59253B00644B1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 869C43EF285D97879070C116 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PushNotificationsSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -321,12 +320,12 @@
 		};
 		199FCA261C8D63D1000AAD5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3656C0E43260F836759D9E09 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6DB12FEFFB4AFB618785B8DE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PushNotificationsSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

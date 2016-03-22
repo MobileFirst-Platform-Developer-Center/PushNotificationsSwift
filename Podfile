@@ -3,3 +3,19 @@ source 'https://hub.jazz.net/git/oper2000/imf-client-sdk-specs-inhouse.git'
 use_frameworks!
 pod 'IBMMobileFirstPlatformFoundation'
 pod 'IBMMobileFirstPlatformFoundationPush'
+
+post_install do |installer|
+    workDir = Dir.pwd
+
+    installer.pods_project.targets.each do |target|
+        debugXcconfigFilename = "#{workDir}/Pods/Target Support Files/#{target}/#{target}.debug.xcconfig"
+        xcconfig = File.read(debugXcconfigFilename)
+        newXcconfig = xcconfig.gsub(/HEADER_SEARCH_PATHS = .*/, "HEADER_SEARCH_PATHS = ")
+        File.open(debugXcconfigFilename, "w") { |file| file << newXcconfig }
+
+        releaseXcconfigFilename = "#{workDir}/Pods/Target Support Files/#{target}/#{target}.release.xcconfig"
+        xcconfig = File.read(releaseXcconfigFilename)
+        newXcconfig = xcconfig.gsub(/HEADER_SEARCH_PATHS = .*/, "HEADER_SEARCH_PATHS = ")
+        File.open(releaseXcconfigFilename, "w") { |file| file << newXcconfig }
+    end
+end 
