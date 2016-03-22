@@ -27,9 +27,9 @@ class UserLoginChallengeHandler: WLChallengeHandler {
         super.init(securityCheck: "UserLogin")
         WLClient.sharedInstance().registerChallengeHandler(self)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "login:", name: LoginNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "logout", name: LogoutNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cancel", name: LoginCancelNotificationKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(login(_:)), name: LoginNotificationKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(logout), name: LogoutNotificationKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(cancel), name: LoginCancelNotificationKey, object: nil)
     }
     
     // login (Triggered by Login Notification)
