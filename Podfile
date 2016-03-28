@@ -1,6 +1,6 @@
 
 use_frameworks!
-pod 'IBMMobileFirstPlatformFoundation'
+pod 'IBMMobileFirstPlatformFoundation','~> 8.0.0'
 pod 'IBMMobileFirstPlatformFoundationPush'
 
 post_install do |installer|
