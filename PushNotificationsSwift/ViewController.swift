@@ -100,9 +100,9 @@ extension ViewController {
 
     @IBAction func registerDevice(sender: AnyObject) {
         print("Register device entered")
-
+        
         // Register device
-        MFPPush.sharedInstance().registerDevice({(response: WLResponse!, error: NSError!) -> Void in
+        MFPPush.sharedInstance().registerDevice(nil, completionHandler: ({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
                 self.enableButtons()
                 self.showAlert("Registered successfully")
@@ -112,7 +112,7 @@ extension ViewController {
                 self.showAlert("Registrations failed.  Error \(error.description)")
                 print(error.description)
             }
-        })
+        }))
     }
 
     @IBAction func getTags(sender: AnyObject) {

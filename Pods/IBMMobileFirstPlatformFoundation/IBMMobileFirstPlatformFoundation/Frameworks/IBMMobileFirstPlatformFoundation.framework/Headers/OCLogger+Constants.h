@@ -97,6 +97,7 @@ extern NSString* const KEY_METADATA_METHOD;
 extern NSString* const KEY_METADATA_LINE;
 extern NSString* const KEY_METADATA_FILE;
 extern NSString* const KEY_METADATA_STACKTRACE;
+extern NSString* const KEY_METADATA_EXCEPTION_MSG;
 extern NSString* const KEY_ARGUMENTS;
 
 extern NSString* const KEY_METADATA_USER;

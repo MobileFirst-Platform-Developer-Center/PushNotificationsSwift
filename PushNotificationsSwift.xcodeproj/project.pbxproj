@@ -15,10 +15,11 @@
 		199FCA1B1C8D63D1000AAD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA191C8D63D1000AAD5C /* Main.storyboard */; };
 		199FCA1D1C8D63D1000AAD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA1C1C8D63D1000AAD5C /* Assets.xcassets */; };
 		199FCA201C8D63D1000AAD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA1E1C8D63D1000AAD5C /* LaunchScreen.storyboard */; };
-		836EB7530396C2B326B74076 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BE6F231423150A93D6FC08 /* Pods.framework */; };
+		BB9D876C9984AAFEEB09ACD9 /* Pods_PushNotificationsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5A04360E778E55875B02BF /* Pods_PushNotificationsSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C8BB80A87A268887E4216C9 /* Pods-PushNotificationsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift.release.xcconfig"; sourceTree = "<group>"; };
 		190873A11C8DB2E700C60FD8 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 		190873A51C8DBB6600C60FD8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		190873A71C8DC04800C60FD8 /* UserLoginChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginChallengeHandler.swift; sourceTree = "<group>"; };
@@ -30,8 +31,8 @@
 		199FCA1F1C8D63D1000AAD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199FCA211C8D63D1000AAD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61BE6F231423150A93D6FC08 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DB12FEFFB4AFB618785B8DE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		869C43EF285D97879070C116 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AD5F0237A2CCD0D76DE98251 /* Pods-PushNotificationsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		CF5A04360E778E55875B02BF /* Pods_PushNotificationsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushNotificationsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				836EB7530396C2B326B74076 /* Pods.framework in Frameworks */,
+				BB9D876C9984AAFEEB09ACD9 /* Pods_PushNotificationsSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +54,7 @@
 				199FCA141C8D63D1000AAD5C /* PushNotificationsSwift */,
 				199FCA131C8D63D1000AAD5C /* Products */,
 				3F2DEEDBE850F2AA99E6EC25 /* Frameworks */,
-				E7C41FEBC31EC6A651539D76 /* Pods */,
+				D8617C048C40EB1C11FDF042 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,15 +85,16 @@
 			isa = PBXGroup;
 			children = (
 				61BE6F231423150A93D6FC08 /* Pods.framework */,
+				CF5A04360E778E55875B02BF /* Pods_PushNotificationsSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E7C41FEBC31EC6A651539D76 /* Pods */ = {
+		D8617C048C40EB1C11FDF042 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				869C43EF285D97879070C116 /* Pods.debug.xcconfig */,
-				6DB12FEFFB4AFB618785B8DE /* Pods.release.xcconfig */,
+				AD5F0237A2CCD0D76DE98251 /* Pods-PushNotificationsSwift.debug.xcconfig */,
+				0C8BB80A87A268887E4216C9 /* Pods-PushNotificationsSwift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -104,10 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 199FCA241C8D63D1000AAD5C /* Build configuration list for PBXNativeTarget "PushNotificationsSwift" */;
 			buildPhases = (
+				8A58EF97B3A0F9033177CE28 /* [CP] Check Pods Manifest.lock */,
 				199FCA0E1C8D63D1000AAD5C /* Sources */,
 				199FCA0F1C8D63D1000AAD5C /* Frameworks */,
 				199FCA101C8D63D1000AAD5C /* Resources */,
-				C8FB038C7D4B46DC3F1405DA /* Embed Pods Frameworks */,
+				DF4AB5BEF22F0A13FA4D7D01 /* [CP] Embed Pods Frameworks */,
+				0508CFC6CA74404F4471E290 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,19 +170,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C8FB038C7D4B46DC3F1405DA /* Embed Pods Frameworks */ = {
+		0508CFC6CA74404F4471E290 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A58EF97B3A0F9033177CE28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF4AB5BEF22F0A13FA4D7D01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -302,7 +336,7 @@
 		};
 		199FCA251C8D63D1000AAD5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 869C43EF285D97879070C116 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = AD5F0237A2CCD0D76DE98251 /* Pods-PushNotificationsSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -320,7 +354,7 @@
 		};
 		199FCA261C8D63D1000AAD5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DB12FEFFB4AFB618785B8DE /* Pods.release.xcconfig */;
+			baseConfigurationReference = 0C8BB80A87A268887E4216C9 /* Pods-PushNotificationsSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
