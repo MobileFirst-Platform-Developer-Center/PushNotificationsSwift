@@ -1,7 +1,9 @@
-
 use_frameworks!
-pod 'IBMMobileFirstPlatformFoundation','~> 8.0.0'
-pod 'IBMMobileFirstPlatformFoundationPush'
+
+target "PushNotificationsSwift" do
+    pod 'IBMMobileFirstPlatformFoundation'
+    pod 'IBMMobileFirstPlatformFoundationPush'
+end
 
 post_install do |installer|
     workDir = Dir.pwd
