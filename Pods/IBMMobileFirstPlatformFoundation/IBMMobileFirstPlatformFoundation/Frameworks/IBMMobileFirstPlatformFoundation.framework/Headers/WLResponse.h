@@ -38,11 +38,6 @@
 @property (nonatomic) NSInteger status;
 
 /**
- * error in case of fail response
- */
-@property (nonatomic) NSError* error;
-
-/**
  * Response data from the server.
  */
 @property (nonatomic, strong) WLProcedureInvocationResult *invocationResult;

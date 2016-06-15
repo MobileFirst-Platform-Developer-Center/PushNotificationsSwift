@@ -11,7 +11,7 @@
 */
 
 //
-//  GatewayChallengeHandler.h
+//  ChallengeHandler.h
 //  WorklightStaticLibProject
 //
 //  Created by Ishai Borovoy on 9/13/12.
@@ -23,20 +23,13 @@
 #import "WLClient.h"
 
 /**
- * You use this base class to create custom Challenge Handlers when using gateways. You must extend this class to implement your own Challenge Handler logic. You use this class to create custom user authentication with external gateways.
+ * You use this base class to create custom Challenge Handlers. You must extend this class to implement your own Challenge Handler logics. You use this class to create custom user authentication.
  */
-@interface GatewayChallengeHandler : BaseChallengeHandler<WLDelegate> {
+@interface ChallengeHandler : BaseChallengeHandler<WLDelegate> {
     @private
     id <WLDelegate> submitLoginFormDelegate;
 }
     @property (atomic, strong) id <WLDelegate> submitLoginFormDelegate;
-
-/**
- * Initialize a challenge handler for the specific gateway.
- *
- * @param gatewayName an arbitrary name for the challenge handler.
- */
--(id) initWithGatewayName: (NSString *)gatewayName;
 
 
 /**
@@ -55,12 +48,12 @@
 -(void) submitSuccess:(WLResponse *) response;
 
 /**
- * This method must be overridden by extending the GatewayChallengeHandler class. In most cases, you call this method to test whether there is a custom challenge to be handled in the response.
- * If this method returns YES, IBM MobileFirst Platform calls the handleChallenge method.
+ * This method must be overridden by extending the ChallengeHandler class. In most cases, you call this method to test whether there is a custom challenge to be handled in the response.
+ * Default Challenge Handlers might handle some responses. If this method returns YES, IBM MobileFirst Platform calls the handleChallenge method.
  *
  * @param response The WLResponse to be tested.
 **/
--(BOOL)canHandleResponse:(WLResponse *) response;
+-(BOOL) isCustomResponse:(WLResponse *) response;
 
 /**
  * You use this method to send collected credentials to a specific URL. You can also specify request parameters, headers, and timeout.

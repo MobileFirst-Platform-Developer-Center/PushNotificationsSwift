@@ -25,31 +25,21 @@
 
 @interface BaseChallengeHandler : NSObject {
     @private
-    NSString *handlerName;
+    NSString *securityCheck;
     
     @protected
     WLRequest *activeRequest;
     NSMutableArray *waitingRequestsList;
 }
 
-@property (nonatomic, strong) NSString *handlerName;
+@property (nonatomic, strong) NSString *securityCheck;
 @property (atomic, strong) WLRequest *activeRequest;
 @property (atomic, strong) NSMutableArray *waitingRequestsList;
 
-/**
- * Initialize a challenge with an arbitrary handler name. If the challenge comes from a security check, the handler name must match the security check name.
- *
- * @param name an arbitrary name for this challenge handler.
- */
--(id)initWithName: (NSString *)name;
-
-/**
- * Calling this method tells MobileFirst Platform that the challenge that you no longer want to take any actions to attempt to resolve the challenge.
- * This method returns control to MobileFirst Platform for further handling. For example, call this method when the user clicks on a cancel button.
- */
--(void) cancel;
-
+-(id) initWithSecurityCheck: (NSString *) securityCheck;
 -(void) handleChallenge: (NSDictionary *)challenge;
+-(void) submitFailure: (WLResponse *)challenge;
+
 -(void) releaseWaitingList;
 -(void) clearWaitingList;
 

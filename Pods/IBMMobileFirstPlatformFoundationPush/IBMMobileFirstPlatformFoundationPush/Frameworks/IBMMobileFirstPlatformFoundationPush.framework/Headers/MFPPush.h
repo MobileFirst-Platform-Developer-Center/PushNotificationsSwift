@@ -73,13 +73,12 @@ enum{
  */
 -(void) getTags:(void(^) (WLResponse *response, NSError* error)) completionHandler;
 
-
 /**
- * This method registers the device with the push service
+ * This method sets the push notification options. If used, should be called before registerDevice()
+ *
  * @param options - Mandatory. iOS notification options
- *					{ phoneNumber: String, alert: boolean, badge: boolean, sound: boolean, categories: NSSet }
- *					where
- *                      phoneNumber - Phone number to receive the SMS based notifications
+ *					{ alert: boolean, badge: boolean, sound: boolean, categories: NSSet }
+ *					where 
  *						alert - To enable displaying alert messages
  *						badge - To enable badge icons
  *						sound - To enable playing sound
@@ -88,26 +87,33 @@ enum{
  *						UIMutableUserNotificationAction *acceptAction = [[UIMutableUserNotificationAction alloc] init];
  *						acceptAction.identifier = @"OK";
  *						acceptAction.title = @"OK";
- *
+ *      
  *						UIMutableUserNotificationAction *rejetAction = [[UIMutableUserNotificationAction alloc] init];
  *						rejetAction.identifier = @"NOK";
  *						rejetAction.title = @"NOK";
- *
+ *       
  *						UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
  *						category.identifier = @"poll";
  *						[category setActions:@[acceptAction,rejetAction] forContext:UIUserNotificationActionContextDefault];
  *						[category setActions:@[acceptAction,rejetAction] forContext:UIUserNotificationActionContextMinimal];
  *
  *						NSDictionary *options = @{
- *                          @"phoneNumber": @"999999999",
  *							@"alert": @true,
  *							@"badge": @true,
  *							@"sound": @true,
  *							@"categories": [NSSet setWithObject:category]
  *						}
+ *                  
+ *
+ */
+-(void) setOptions: (NSDictionary*)options;
+
+/**
+ * This method registers the device with the push service
+ *
  * @param completionHandler - returns a WLResponse or NSError
  */
--(void) registerDevice:(NSDictionary *) options completionHandler: (void(^) (WLResponse *response, NSError* error)) completionHandler;
+-(void) registerDevice: (void(^) (WLResponse *response, NSError* error)) completionHandler;
 
 
 /**

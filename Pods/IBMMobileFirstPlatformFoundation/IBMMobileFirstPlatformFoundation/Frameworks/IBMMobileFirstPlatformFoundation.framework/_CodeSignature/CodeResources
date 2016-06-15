@@ -10,39 +10,39 @@
 		</data>
 		<key>Headers/BaseChallengeHandler.h</key>
 		<data>
-		+Vk66AwHluYiDbZiYGTFPEUNkUc=
+		ml94T1Q4oRNG3Po1yYxTq9JVWAM=
 		</data>
-		<key>Headers/GatewayChallengeHandler.h</key>
+		<key>Headers/ChallengeHandler.h</key>
 		<data>
-		c/6VIanlXJLH73xykVZRshSSd/k=
+		oLFEpRFkY71yJ4ubxFH3pFrYAIY=
 		</data>
 		<key>Headers/IBMMobileFirstPlatformFoundation.h</key>
 		<data>
-		p535lmxvDO3bAMNTZ+DcuveDPtw=
+		ISUanjiqBcsU/c2EFhSjYkAFVw0=
 		</data>
 		<key>Headers/OCLogger+Constants.h</key>
 		<data>
-		mgQz4L+M4E31ZLb1fOvPNMyAK0A=
+		ODhuikPAKfnq5PzZquEdxHBkhAs=
 		</data>
 		<key>Headers/OCLogger.h</key>
 		<data>
 		qjZlpUJ8f5BSb1Z5xNc91Df/83Y=
 		</data>
-		<key>Headers/SecurityCheckChallengeHandler.h</key>
-		<data>
-		Mtn7gocc9pJB/cz0uR49odCno8g=
-		</data>
 		<key>Headers/WLAnalytics.h</key>
 		<data>
-		OenQRb10fqsYZday1kY2tD4hCRQ=
+		fE9nGKybd4QRsogKkrOIoaGrVsQ=
 		</data>
 		<key>Headers/WLAuthorizationManager.h</key>
 		<data>
-		6myhKDrcDw1OJRBA+RYuX9FfVj8=
+		v0285yIlGOj7XLN4AqzlcX2gGrg=
+		</data>
+		<key>Headers/WLChallengeHandler.h</key>
+		<data>
+		PPFvUVCkXdX6/3FWwYHdJGf+P0M=
 		</data>
 		<key>Headers/WLClient.h</key>
 		<data>
-		vR6TrUl59xEol116KongA2qkTEQ=
+		ope6jFwHHpQg4CJfTSJWm2rGwC8=
 		</data>
 		<key>Headers/WLCookieExtractor.h</key>
 		<data>
@@ -58,15 +58,15 @@
 		</data>
 		<key>Headers/WLFailResponse.h</key>
 		<data>
-		2a5EwgWJOFkYyfSjRwBk6rBC7z4=
+		+TN4NiEO2wyyz+Fi/PykaWMkDk0=
 		</data>
 		<key>Headers/WLProcedureInvocationData.h</key>
 		<data>
-		mHyaDMTVVv6UD7FMG1wKQ4zEJcg=
+		ByYmxxjKJ/WvOA6eY9GMC3IQ02I=
 		</data>
 		<key>Headers/WLProcedureInvocationResult.h</key>
 		<data>
-		JC561WMcJaK5D7FzGQj9Lr9ZTPY=
+		/yN0SYnOVk09vmAIOscFYJfPKMA=
 		</data>
 		<key>Headers/WLResourceRequest.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/WLResponse.h</key>
 		<data>
-		WYOrG3jI4Wfs374ka9rtzfz0Y5w=
+		VbA6Mxywc/yMEodl3u3+Wzp8Gxo=
 		</data>
 		<key>Headers/WLResponseListener.h</key>
 		<data>
@@ -94,268 +94,107 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yDcbzAp/V15aLAtbQYcELq8HH8A=
+		mzVJWQohtIn/M0k3kTjSg9BC8GA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		V1D1PLP1UAT/wWs6n+c7l4CWvYY=
+		6NT26D/4Q1+LIrkVfLqqJ6amxDY=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/AccessToken.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PhHkWocysHNjMlGAc2fc0y4BSBU=
-			</data>
-			<key>hash2</key>
-			<data>
-			Hjb2Y7dN10x6WXTp3wqIgnkFPRD74CYY/dOZVqiRzZc=
-			</data>
-		</dict>
+		<data>
+		PhHkWocysHNjMlGAc2fc0y4BSBU=
+		</data>
 		<key>Headers/BaseChallengeHandler.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+Vk66AwHluYiDbZiYGTFPEUNkUc=
-			</data>
-			<key>hash2</key>
-			<data>
-			bU6qWh5fkSbzoYJLvqB3/iHGCJ5rgtGduodq2ImFk2g=
-			</data>
-		</dict>
-		<key>Headers/GatewayChallengeHandler.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			c/6VIanlXJLH73xykVZRshSSd/k=
-			</data>
-			<key>hash2</key>
-			<data>
-			RWp2Z0z+j/pAZKI4XJRs0MdG4dDAjB6aNbtWpXZNxJ8=
-			</data>
-		</dict>
+		<data>
+		ml94T1Q4oRNG3Po1yYxTq9JVWAM=
+		</data>
+		<key>Headers/ChallengeHandler.h</key>
+		<data>
+		oLFEpRFkY71yJ4ubxFH3pFrYAIY=
+		</data>
 		<key>Headers/IBMMobileFirstPlatformFoundation.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			p535lmxvDO3bAMNTZ+DcuveDPtw=
-			</data>
-			<key>hash2</key>
-			<data>
-			YEhuZAuSu6wESFL55N3sGZjNXA4xeDprDxWMBH9O8rQ=
-			</data>
-		</dict>
+		<data>
+		ISUanjiqBcsU/c2EFhSjYkAFVw0=
+		</data>
 		<key>Headers/OCLogger+Constants.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mgQz4L+M4E31ZLb1fOvPNMyAK0A=
-			</data>
-			<key>hash2</key>
-			<data>
-			4u2EmBI0r9KDYQszopBWqA6ONLm2jSm9xiIVjXzgKTk=
-			</data>
-		</dict>
+		<data>
+		ODhuikPAKfnq5PzZquEdxHBkhAs=
+		</data>
 		<key>Headers/OCLogger.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qjZlpUJ8f5BSb1Z5xNc91Df/83Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			aW5kOM3Gh9PjuHY05kdTBUEqOKPrKk2MWeLtjTGGGRY=
-			</data>
-		</dict>
-		<key>Headers/SecurityCheckChallengeHandler.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Mtn7gocc9pJB/cz0uR49odCno8g=
-			</data>
-			<key>hash2</key>
-			<data>
-			0qdj6DC8QnnFsZuJsC9s1gxemoocB4OSfigISv0xvKU=
-			</data>
-		</dict>
+		<data>
+		qjZlpUJ8f5BSb1Z5xNc91Df/83Y=
+		</data>
 		<key>Headers/WLAnalytics.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OenQRb10fqsYZday1kY2tD4hCRQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			78pK7ORgu9jtsjhP0NILFxjFkU25aQIjVN3dOkPCyI4=
-			</data>
-		</dict>
+		<data>
+		fE9nGKybd4QRsogKkrOIoaGrVsQ=
+		</data>
 		<key>Headers/WLAuthorizationManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6myhKDrcDw1OJRBA+RYuX9FfVj8=
-			</data>
-			<key>hash2</key>
-			<data>
-			wjj5sLlPP/qzFvV1cYG4/qUeep/KfI/lgDQCxZZYJYs=
-			</data>
-		</dict>
+		<data>
+		v0285yIlGOj7XLN4AqzlcX2gGrg=
+		</data>
+		<key>Headers/WLChallengeHandler.h</key>
+		<data>
+		PPFvUVCkXdX6/3FWwYHdJGf+P0M=
+		</data>
 		<key>Headers/WLClient.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vR6TrUl59xEol116KongA2qkTEQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			0FqOReWgNN0JO+ynqsOp0Xmh+8T0NxY6I5+8oHyp1kc=
-			</data>
-		</dict>
+		<data>
+		ope6jFwHHpQg4CJfTSJWm2rGwC8=
+		</data>
 		<key>Headers/WLCookieExtractor.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xR7cKjmjS4owlZvyzHtpTuMCtMM=
-			</data>
-			<key>hash2</key>
-			<data>
-			WfBW8fnEAm0tMICyBht9uQ/VSShHBat0gggM2lTQOhM=
-			</data>
-		</dict>
+		<data>
+		xR7cKjmjS4owlZvyzHtpTuMCtMM=
+		</data>
 		<key>Headers/WLDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1xzP1lBPHDbyjlmTZhEvpFYwUBY=
-			</data>
-			<key>hash2</key>
-			<data>
-			6OJ3zKFgoRHJZA9CAhSRD0IfYOJmcJfWrVnVOzH4imw=
-			</data>
-		</dict>
+		<data>
+		1xzP1lBPHDbyjlmTZhEvpFYwUBY=
+		</data>
 		<key>Headers/WLDeviceAuthManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			z5+r44kCdkKt81vLEaTYcMWsxh0=
-			</data>
-			<key>hash2</key>
-			<data>
-			OltCvOwRnRha7p4XE8LszwT9Rv/ZQL68hbdxnnRe88g=
-			</data>
-		</dict>
+		<data>
+		z5+r44kCdkKt81vLEaTYcMWsxh0=
+		</data>
 		<key>Headers/WLFailResponse.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2a5EwgWJOFkYyfSjRwBk6rBC7z4=
-			</data>
-			<key>hash2</key>
-			<data>
-			LwKPtgXvRkeOQUWe/sVGd4iFtHsQtSnXlaWganNiukI=
-			</data>
-		</dict>
+		<data>
+		+TN4NiEO2wyyz+Fi/PykaWMkDk0=
+		</data>
 		<key>Headers/WLProcedureInvocationData.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mHyaDMTVVv6UD7FMG1wKQ4zEJcg=
-			</data>
-			<key>hash2</key>
-			<data>
-			3ai8E+eox8GNDzAHXz1+Y/VqCiTt2IoI3u907AI6AcY=
-			</data>
-		</dict>
+		<data>
+		ByYmxxjKJ/WvOA6eY9GMC3IQ02I=
+		</data>
 		<key>Headers/WLProcedureInvocationResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JC561WMcJaK5D7FzGQj9Lr9ZTPY=
-			</data>
-			<key>hash2</key>
-			<data>
-			RZ5GZ92uONzpkNex18QqJUj29RY9v9zLuGbFTtMG2hA=
-			</data>
-		</dict>
+		<data>
+		/yN0SYnOVk09vmAIOscFYJfPKMA=
+		</data>
 		<key>Headers/WLResourceRequest.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			nhe9LijL1NymMh9hZX8bJrWzOTE=
-			</data>
-			<key>hash2</key>
-			<data>
-			h+oWS0tLwlLoQ/u6+wnV4/R+BNkCbJHDnSZVBhec0lU=
-			</data>
-		</dict>
+		<data>
+		nhe9LijL1NymMh9hZX8bJrWzOTE=
+		</data>
 		<key>Headers/WLResponse.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WYOrG3jI4Wfs374ka9rtzfz0Y5w=
-			</data>
-			<key>hash2</key>
-			<data>
-			6dCqpPPsjonzKlWNsP/HV/R0UqxpQLEMx65HA46WlPU=
-			</data>
-		</dict>
+		<data>
+		VbA6Mxywc/yMEodl3u3+Wzp8Gxo=
+		</data>
 		<key>Headers/WLResponseListener.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			SjSpBlEGxbm3KrcORWh7fUxcFD0=
-			</data>
-			<key>hash2</key>
-			<data>
-			bKjFOTYpSBt0CTssg1DCEBt7ojlnMakqnOg4bCtx32c=
-			</data>
-		</dict>
+		<data>
+		SjSpBlEGxbm3KrcORWh7fUxcFD0=
+		</data>
 		<key>Headers/WLSecurityCommonUtils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BSSiXbVhnCNdUhVWFutZuWcS0No=
-			</data>
-			<key>hash2</key>
-			<data>
-			2RihIIXEKQN8C9hynA5lv5wfaBfpNMwvdkC+20etNAg=
-			</data>
-		</dict>
+		<data>
+		BSSiXbVhnCNdUhVWFutZuWcS0No=
+		</data>
 		<key>Headers/WLSecurityConstants.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			wi4+U6u8uNKcxpmdot27by56eOA=
-			</data>
-			<key>hash2</key>
-			<data>
-			9aScA5hVM9CDZoU0GJ+/2Yi1H3iR0lKG9tEogPrOm2c=
-			</data>
-		</dict>
+		<data>
+		wi4+U6u8uNKcxpmdot27by56eOA=
+		</data>
 		<key>Headers/WLSecurityUtils.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			e21LoaUHBHJkMvO3kBp9rfK/mDk=
-			</data>
-			<key>hash2</key>
-			<data>
-			htWxkkmcftuYPKyG+K2rnfbFDqRvCqa9ARFZpUITO+U=
-			</data>
-		</dict>
+		<data>
+		e21LoaUHBHJkMvO3kBp9rfK/mDk=
+		</data>
 		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			V1D1PLP1UAT/wWs6n+c7l4CWvYY=
-			</data>
-			<key>hash2</key>
-			<data>
-			+BlM+5WfZqHSRs6poidlBdmdXdBhqqk+66UsSaMt8Ks=
-			</data>
-		</dict>
+		<data>
+		6NT26D/4Q1+LIrkVfLqqJ6amxDY=
+		</data>
 	</dict>
 	<key>rules</key>
 	<dict>

@@ -118,10 +118,14 @@ extern NSMutableDictionary *piggyBackData;
 
 -(void) invokeProcedure:(WLProcedureInvocationData *)invocationData withDelegate:(id <WLDelegate>)delegate options:(NSDictionary *)options;
 
+
+-(void) sendInvoke:(WLProcedureInvocationData *)invocationData withDelegate:(id <WLDelegate>)delegate options:(NSDictionary *)options ignoreChallenges: (BOOL)ignoreChallenges;
+
 /**
- * You can use this method to register a challenge handler, which is a class that inherits either from GatewayChallengeHandler or SecurityCheckChallengeHandler.
+ * You can use this method to register a custom Challenge Handler, which is a class that inherits from ChallengeHandler. See example 1: Adding a custom Challenge Handler.
+ * You can also use this method to override the default Remote Disable / Notify Challenge Handler, by registering a class that inherits from WLChallengeHandler. See example <a href=""> link  2: Customizing the Remote Disable / Notify.</a>
  *
- * @param challengeHandler The challenge handler to register.
+ * @param challengeHandler The Challenge Handler to register.
  */
 -(void) registerChallengeHandler: (BaseChallengeHandler *) challengeHandler;
 
@@ -205,12 +209,12 @@ extern NSMutableDictionary *piggyBackData;
  **/
 -(void) pinTrustedCertificatePublicKeyFromFile:(NSString*) certificateFilename;
 
-/**
+/*
  * Sets the device's Display name in the server (calls update registration)
  */
 -(void) setDeviceDisplayName:(NSString*)deviceDisplayName WithCompletionHandler:(void(^)(NSError* error))completionHandler;
 
-/**
+/*
  * Get the Display name of this device from the MFP server
  */
 -(void) getDeviceDisplayNameWithCompletionHandler:(void(^)(NSString *deviceDisplayName , NSError *error))completionHandler;

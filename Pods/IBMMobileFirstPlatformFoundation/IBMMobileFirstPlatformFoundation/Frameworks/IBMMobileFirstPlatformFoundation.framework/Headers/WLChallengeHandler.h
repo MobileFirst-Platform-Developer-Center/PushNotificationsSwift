@@ -11,7 +11,7 @@
 */
 
 //
-//  SecurityCheckChallengeHandler.h
+//  WLChallengeHandler.h
 //  WorklightStaticLibProject
 //
 //  Created by Ishai Borovoy on 9/13/12.
@@ -25,21 +25,9 @@
  * You use this base class to create an IBM MobileFirst Platform Challenge Handler.
  * You must extend this class to implement your own version of an IBM MobileFirst Platform Challenge Handler, for example RemoteDisableChallengeHandler.
  */
-@interface SecurityCheckChallengeHandler : BaseChallengeHandler
-
-    /**
-     * Initialize a challenge handler for the specific security check name.
-     *
-     * @param securityCheck The name of the security check that will be handled.
-     */
-    -(id) initWithSecurityCheck: (NSString *)securityCheck;
-
-    -(NSString *) securityCheck;
-
+@interface WLChallengeHandler : BaseChallengeHandler
     /**
      * Send the answer back to the request.
-     *
-     * @param answer A dictionary that will be converted to JSON and sent back to the security check.
      */
     -(void) submitChallengeAnswer: (NSDictionary *)answer;
 
