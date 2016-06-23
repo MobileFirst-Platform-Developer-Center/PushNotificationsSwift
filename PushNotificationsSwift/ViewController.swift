@@ -101,6 +101,8 @@ extension ViewController {
     @IBAction func registerDevice(sender: AnyObject) {
         print("Register device entered")
         
+        MFPPush.sharedInstance().reg
+        
         // Register device
         MFPPush.sharedInstance().registerDevice(nil, completionHandler: ({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {

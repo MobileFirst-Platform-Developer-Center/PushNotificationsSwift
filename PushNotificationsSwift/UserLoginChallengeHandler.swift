@@ -40,7 +40,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
         
         // If challenged use submitChallengeAnswer API, else use login API
         if(!self.isChallenged){
-            WLAuthorizationManager.sharedInstance().login(self.securityCheck(), withCredentials: ["username": username, "password": password]) { (error) -> Void in
+            WLAuthorizationManager.sharedInstance().login(self.securityCheck, withCredentials: ["username": username, "password": password]) { (error) -> Void in
                 NSLog("login")
                 if(error != nil){
                     NSLog("Login failed" + String(error))
@@ -59,7 +59,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
     
     // logout (Triggered by Logout Notification)
     func logout(){
-        WLAuthorizationManager.sharedInstance().logout(self.securityCheck()){
+        WLAuthorizationManager.sharedInstance().logout(self.securityCheck){
             (error) -> Void in
             if(error != nil){
                 NSLog("Logout failed" + String(error))

@@ -1,6 +1,6 @@
 PODS:
-  - IBMMobileFirstPlatformFoundation (8.0.2016032802)
-  - IBMMobileFirstPlatformFoundationPush (8.0.2016040403):
+  - IBMMobileFirstPlatformFoundation (8.0.2016061012)
+  - IBMMobileFirstPlatformFoundationPush (8.0.2016061011):
     - IBMMobileFirstPlatformFoundation (~> 8.0)
 
 DEPENDENCIES:
@@ -8,8 +8,8 @@ DEPENDENCIES:
   - IBMMobileFirstPlatformFoundationPush
 
 SPEC CHECKSUMS:
-  IBMMobileFirstPlatformFoundation: 586a632f113d9a287ae7023a0e53ea2e376e8e99
-  IBMMobileFirstPlatformFoundationPush: c9e35c8df21542466df3019ae54b44fddfd9ed92
+  IBMMobileFirstPlatformFoundation: cc756bb93071c593030daf5b6a0e7f9eade84416
+  IBMMobileFirstPlatformFoundationPush: 50f6112207ce126e37d6fecddc22e6a6255550da
 
 PODFILE CHECKSUM: 401003a667e5ff377e844cf31ed2a842a58a4f28
 
