@@ -51,8 +51,8 @@ Get started with the following tutorials:
 
 Copyright 2016 IBM Corp.
 
-   IBM - IBM MobileFirst Platform Foundation v8.0 beta license agreement
+   IBM - IBM MobileFirst Platform Foundation v8.0 license agreement
 
-       https://developer.ibm.com/mobilefirstplatform/beta/license
+       https://mobilefirstplatform.ibmcloud.com/licenses/ipla/
 
-[Terms of Use](https://developer.ibm.com/mobilefirstplatform/beta/license)
+[Terms of Use](https://mobilefirstplatform.ibmcloud.com/licenses/ipla/)
