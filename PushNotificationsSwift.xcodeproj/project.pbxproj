@@ -15,11 +15,10 @@
 		199FCA1B1C8D63D1000AAD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA191C8D63D1000AAD5C /* Main.storyboard */; };
 		199FCA1D1C8D63D1000AAD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA1C1C8D63D1000AAD5C /* Assets.xcassets */; };
 		199FCA201C8D63D1000AAD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199FCA1E1C8D63D1000AAD5C /* LaunchScreen.storyboard */; };
-		BB9D876C9984AAFEEB09ACD9 /* Pods_PushNotificationsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5A04360E778E55875B02BF /* Pods_PushNotificationsSwift.framework */; };
+		30E6221ABBD38704DB955CE3 /* Pods_PushNotificationsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F902B8827DCDAAB187B1D88 /* Pods_PushNotificationsSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C8BB80A87A268887E4216C9 /* Pods-PushNotificationsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift.release.xcconfig"; sourceTree = "<group>"; };
 		190873A11C8DB2E700C60FD8 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 		190873A51C8DBB6600C60FD8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		190873A71C8DC04800C60FD8 /* UserLoginChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginChallengeHandler.swift; sourceTree = "<group>"; };
@@ -30,9 +29,10 @@
 		199FCA1C1C8D63D1000AAD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199FCA1F1C8D63D1000AAD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199FCA211C8D63D1000AAD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BE6F2C05169AFAC44EBB265 /* Pods-PushNotificationsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		61BE6F231423150A93D6FC08 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD5F0237A2CCD0D76DE98251 /* Pods-PushNotificationsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		CF5A04360E778E55875B02BF /* Pods_PushNotificationsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushNotificationsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F902B8827DCDAAB187B1D88 /* Pods_PushNotificationsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushNotificationsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9563C5F82CF706E161D08C2F /* Pods-PushNotificationsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsSwift/Pods-PushNotificationsSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB9D876C9984AAFEEB09ACD9 /* Pods_PushNotificationsSwift.framework in Frameworks */,
+				30E6221ABBD38704DB955CE3 /* Pods_PushNotificationsSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +54,7 @@
 				199FCA141C8D63D1000AAD5C /* PushNotificationsSwift */,
 				199FCA131C8D63D1000AAD5C /* Products */,
 				3F2DEEDBE850F2AA99E6EC25 /* Frameworks */,
-				D8617C048C40EB1C11FDF042 /* Pods */,
+				7AF96A3E79D132D6C05EFD84 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,16 +85,16 @@
 			isa = PBXGroup;
 			children = (
 				61BE6F231423150A93D6FC08 /* Pods.framework */,
-				CF5A04360E778E55875B02BF /* Pods_PushNotificationsSwift.framework */,
+				8F902B8827DCDAAB187B1D88 /* Pods_PushNotificationsSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D8617C048C40EB1C11FDF042 /* Pods */ = {
+		7AF96A3E79D132D6C05EFD84 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AD5F0237A2CCD0D76DE98251 /* Pods-PushNotificationsSwift.debug.xcconfig */,
-				0C8BB80A87A268887E4216C9 /* Pods-PushNotificationsSwift.release.xcconfig */,
+				3BE6F2C05169AFAC44EBB265 /* Pods-PushNotificationsSwift.debug.xcconfig */,
+				9563C5F82CF706E161D08C2F /* Pods-PushNotificationsSwift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 		};
 		199FCA251C8D63D1000AAD5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD5F0237A2CCD0D76DE98251 /* Pods-PushNotificationsSwift.debug.xcconfig */;
+			baseConfigurationReference = 3BE6F2C05169AFAC44EBB265 /* Pods-PushNotificationsSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = PushNotificationsSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sample.PushNotificationsSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -354,7 +354,7 @@
 		};
 		199FCA261C8D63D1000AAD5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C8BB80A87A268887E4216C9 /* Pods-PushNotificationsSwift.release.xcconfig */;
+			baseConfigurationReference = 9563C5F82CF706E161D08C2F /* Pods-PushNotificationsSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -363,7 +363,7 @@
 				INFOPLIST_FILE = PushNotificationsSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sample.PushNotificationsSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
