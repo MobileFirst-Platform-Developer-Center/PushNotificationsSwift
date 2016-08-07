@@ -16,6 +16,7 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notificatio
 	* Under **Applications** → **PushNotificationsSwift** → **Push** → **Push Settings**, upload your PKCS 12 (.p12) file and password.
 5. Run the app by clicking the **Run** button.
 
+> **Tip:** you can update the bundled SDK by running the command `pod update` from the project's root folder.
 
 **[Sending a notification](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/sending-push-notifications):**
 
