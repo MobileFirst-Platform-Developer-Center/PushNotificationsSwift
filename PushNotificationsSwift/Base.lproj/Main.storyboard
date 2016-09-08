@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QV8-76-0gx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QV8-76-0gx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -39,13 +39,6 @@
                                     <action selector="getTags:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Prn-gK-uAg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-s0-kUv">
-                                <rect key="frame" x="237" y="186" width="127" height="30"/>
-                                <state key="normal" title="Subscribe To Tags"/>
-                                <connections>
-                                    <action selector="subscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRk-DG-E0j"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-fs-LAj">
                                 <rect key="frame" x="239" y="224" width="123" height="30"/>
                                 <state key="normal" title="Get Subscriptions"/>
@@ -65,6 +58,13 @@
                                 <state key="normal" title="Unregister Device"/>
                                 <connections>
                                     <action selector="unregisterDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Fe-DZ-4ne"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-s0-kUv">
+                                <rect key="frame" x="237" y="186" width="127" height="30"/>
+                                <state key="normal" title="Subscribe To Tags"/>
+                                <connections>
+                                    <action selector="subscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRk-DG-E0j"/>
                                 </connections>
                             </button>
                         </subviews>

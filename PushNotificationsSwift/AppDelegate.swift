@@ -65,6 +65,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Registers device token with server.
         MFPPush.sharedInstance().sendDeviceToken(deviceToken)
     }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("didFailToRegisterForRemoteNotificationsWithError: \(error.description)")
+        
+        showAlert("Failed to register for remote notifications with error: \(error.description)")
+    }
 
     func showAlert(message: String) {
         let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertControllerStyle.Alert)
