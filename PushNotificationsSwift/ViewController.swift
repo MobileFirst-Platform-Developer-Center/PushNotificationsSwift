@@ -199,12 +199,10 @@ extension ViewController {
     @IBAction func unregisterDevice(sender: AnyObject) {
         print("Unregister device entered")
 
-        // Disable buttons
-        self.disableButtons()
-
         // Unregister device
         MFPPush.sharedInstance().unregisterDevice({(response: WLResponse!, error: NSError!) -> Void in
             if error == nil {
+                // Disable buttons
                 self.disableButtons()
                 self.showAlert("Unregistered successfully")
                 print("Subscribed successfully response: \(response)")
