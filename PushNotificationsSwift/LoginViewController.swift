@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     var remainingAttemptsViaSegue: Int!
     
     // viewWillAppear
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.usernameInput.text = ""
         self.passwordInput.text = ""
         if(self.remainingAttemptsViaSegue != nil) {
@@ -42,15 +42,15 @@ class LoginViewController: UIViewController {
             self.errorLabel.text = self.errorViaSegue
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateLabels(_:)), name: LoginRequiredNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginSuccess), name: LoginSuccessNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginFailure(_:)), name: LoginFailureNotificationKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels(_:)), name: NSNotification.Name(rawValue: LoginRequiredNotificationKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: LoginSuccessNotificationKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginFailure(_:)), name: NSNotification.Name(rawValue: LoginFailureNotificationKey), object: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(back(_:)))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(_:)))
         self.navigationItem.leftBarButtonItem = backButton
     }
 
@@ -59,26 +59,26 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func login(sender: UIButton) {
+    @IBAction func login(_ sender: UIButton) {
         if(self.usernameInput.text != "" && self.passwordInput.text != ""){
-            NSNotificationCenter.defaultCenter().postNotificationName(LoginNotificationKey, object: nil, userInfo: ["username": usernameInput.text!, "password": passwordInput.text!])
+            NotificationCenter.default.post(name: Notification.Name(rawValue: LoginNotificationKey), object: nil, userInfo: ["username": usernameInput.text!, "password": passwordInput.text!])
         }
     }
     
-    @IBAction func cancel(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
-        NSNotificationCenter.defaultCenter().postNotificationName(LoginCancelNotificationKey, object: nil)
+    @IBAction func cancel(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LoginCancelNotificationKey), object: nil)
     }
     
-    func back(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
-        NSNotificationCenter.defaultCenter().postNotificationName(LoginCancelNotificationKey, object: nil)
+    func back(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LoginCancelNotificationKey), object: nil)
     }
     
     
     // updateLabels (triggered by LoginRequired notification)
-    func updateLabels(notification:NSNotification){
-        let userInfo = notification.userInfo as! Dictionary<String, AnyObject!>
+    func updateLabels(_ notification:Notification){
+        let userInfo = notification.userInfo as! Dictionary<String, AnyObject?>
         let errMsg = userInfo["errorMsg"] as! String
         let remainingAttempts = userInfo["remainingAttempts"] as! Int
         self.errorLabel.text = errMsg
@@ -88,29 +88,29 @@ class LoginViewController: UIViewController {
     // loginSuccess (triggered by LoginSuccess notification)
     func loginSuccess(){
         NSLog("login success")
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
     
     // loginFailure (triggered by LoginFailure notification)
-    func loginFailure(notification:NSNotification){
+    func loginFailure(_ notification:Notification){
         self.usernameInput.text = ""
         self.passwordInput.text = ""
         self.remainingLabel.text = ""
         self.errorLabel.text = ""
         
-        let userInfo = notification.userInfo as! Dictionary<String, AnyObject!>
+        let userInfo = notification.userInfo as! Dictionary<String, AnyObject?>
         let errorMsg = userInfo["errorMsg"] as! String
         
         let alert = UIAlertController(title: "Error",
             message: errorMsg,
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
-            self.navigationController?.popViewControllerAnimated(true)
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { (action) -> Void in
+            self.navigationController?.popViewController(animated: true)
         })
         
-        dispatch_async(dispatch_get_main_queue()) {
-            self.presentViewController(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
         }
 
         
@@ -118,9 +118,9 @@ class LoginViewController: UIViewController {
     }
     
     // viewDidDisappear
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
 
