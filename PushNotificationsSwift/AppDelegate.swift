@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Initialize MFPPush
         MFPPush.sharedInstance().initialize()
 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = UserLoginChallengeHandler()
 
         // Check if application was opened from a notification
-        if let userInfo = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject: AnyObject] {
+        if let userInfo = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
             //handle your notification
             print("Received Notification in didFinishLaunchingWithOptions \(userInfo)")
 
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         print("Received Notification in didReceiveRemoteNotification \(userInfo)")
 
         // display the alert body
@@ -59,24 +59,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("didRegisterForRemoteNotificationsWithDeviceToken: Registered device successfully")
 
         // Registers device token with server.
         MFPPush.sharedInstance().sendDeviceToken(deviceToken)
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print("didFailToRegisterForRemoteNotificationsWithError: \(error.description)")
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("didFailToRegisterForRemoteNotificationsWithError: \(error.localizedDescription)")
         
-        showAlert("Failed to register for remote notifications with error: \(error.description)")
+        showAlert("Failed to register for remote notifications with error: \(error.localizedDescription)")
     }
 
-    func showAlert(message: String) {
-        let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertDialog.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+    func showAlert(_ message: String) {
+        let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertDialog.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
 
-        window!.rootViewController?.presentViewController(alertDialog, animated: true, completion: nil)
+        window!.rootViewController?.present(alertDialog, animated: true, completion: nil)
     }
 
 
