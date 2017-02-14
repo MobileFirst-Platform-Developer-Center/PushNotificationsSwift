@@ -20,21 +20,21 @@ import IBMMobileFirstPlatformFoundation
 class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
     
     var isChallenged: Bool
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     override init(){
         self.isChallenged = false
         super.init(securityCheck: "UserLogin")
-        WLClient.sharedInstance().registerChallengeHandler(self)
+        WLClient.sharedInstance().register(self)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(login(_:)), name: LoginNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(logout), name: LogoutNotificationKey, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(cancel), name: LoginCancelNotificationKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(login(_:)), name: NSNotification.Name(rawValue: LoginNotificationKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logout), name: NSNotification.Name(rawValue: LogoutNotificationKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cancel), name: NSNotification.Name(rawValue: LoginCancelNotificationKey), object: nil)
     }
     
     // login (Triggered by Login Notification)
-    func login(notification:NSNotification){
-        let userInfo = notification.userInfo as! Dictionary<String, AnyObject!>
+    func login(_ notification:Notification){
+        let userInfo = notification.userInfo as! Dictionary<String, AnyObject?>
         let username = userInfo["username"] as! String
         let password = userInfo["password"] as! String
         
@@ -43,7 +43,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
             WLAuthorizationManager.sharedInstance().login(self.securityCheck, withCredentials: ["username": username, "password": password]) { (error) -> Void in
                 NSLog("login")
                 if(error != nil){
-                    NSLog("Login failed" + String(error))
+                    NSLog("Login failed" + String(describing: error))
                 }
             }
         }
@@ -62,16 +62,16 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
         WLAuthorizationManager.sharedInstance().logout(self.securityCheck){
             (error) -> Void in
             if(error != nil){
-                NSLog("Logout failed" + String(error))
+                NSLog("Logout failed" + String(describing: error))
             }
         }
         self.isChallenged = false
     }
     
     // handleChallenge
-    override func handleChallenge(challenge: [NSObject : AnyObject]!) {
+    override func handleChallenge(_ challenge: [AnyHashable: Any]!) {
         self.isChallenged = true
-        self.defaults.removeObjectForKey("displayName")
+        self.defaults.removeObject(forKey: "displayName")
         var errMsg: String!
         
         if(challenge["errorMsg"] is NSNull){
@@ -82,18 +82,18 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
         }
         let remainingAttempts = challenge["remainingAttempts"]
         
-        NSNotificationCenter.defaultCenter().postNotificationName(LoginRequiredNotificationKey, object: nil, userInfo: ["errorMsg":errMsg!, "remainingAttempts":remainingAttempts!])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LoginRequiredNotificationKey), object: nil, userInfo: ["errorMsg":errMsg!, "remainingAttempts":remainingAttempts!])
         
     }
     
     // handleSuccess
-    override func handleSuccess(success: [NSObject : AnyObject]!) {
+    override func handleSuccess(_ success: [AnyHashable: Any]!) {
         self.isChallenged = false
-        NSNotificationCenter.defaultCenter().postNotificationName(LoginSuccessNotificationKey, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LoginSuccessNotificationKey), object: nil)
     }
     
     // handleFailure
-    override func handleFailure(failure: [NSObject : AnyObject]!) {
+    override func handleFailure(_ failure: [AnyHashable: Any]!) {
         self.isChallenged = false
         var errorMsg: String!
         if failure["failure"] != nil {
@@ -102,7 +102,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
         else{
             errorMsg = "Unknown error"
         }
-        NSNotificationCenter.defaultCenter().postNotificationName(LoginFailureNotificationKey, object: nil, userInfo: ["errorMsg":errorMsg!])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LoginFailureNotificationKey), object: nil, userInfo: ["errorMsg":errorMsg!])
     }
 
 }
