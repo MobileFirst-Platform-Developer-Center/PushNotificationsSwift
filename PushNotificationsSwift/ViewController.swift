@@ -173,14 +173,14 @@ extension ViewController {
 
         // Subscribe to tags
         MFPPush.sharedInstance().subscribe(self.tagsArray) { (response, error)  -> Void in
-            if error == nil {
-                self.showAlert("Subscribed successfully")
-                print("Subscribed successfully response: \(response)")
-            } else {
-                self.showAlert("Failed to subscribe")
-                print("Error \(error?.localizedDescription)")
-            }
-        }
+           if error == nil {
+               self.showAlert("Subscribed successfully")
+               print("Subscribed successfully response: \(response)")
+           } else {
+              self.showAlert("Failed to subscribe")
+               print("Error \(error?.localizedDescription)")
+           }
+       }
 //        MFPPush.sharedInstance().subscribe(self.tagsArray, completionHandler: {(response: WLResponse!, error: NSError!) -> Void in
 //            if error == nil {
 //                self.showAlert("Subscribed successfully")

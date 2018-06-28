@@ -25,7 +25,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
     override init(){
         self.isChallenged = false
         super.init(securityCheck: "UserLogin")
-        WLClient.sharedInstance().register(self)
+        WLClient.sharedInstance().registerChallengeHandler(self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(login(_:)), name: NSNotification.Name(rawValue: LoginNotificationKey), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(logout), name: NSNotification.Name(rawValue: LogoutNotificationKey), object: nil)
