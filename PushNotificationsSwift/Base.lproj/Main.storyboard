@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QV8-76-0gx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QV8-76-0gx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Push Notifications-->
@@ -15,24 +19,24 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOg-5N-RVd">
-                                <rect key="frame" x="237" y="72" width="127" height="30"/>
+                                <rect key="frame" x="124" y="72" width="127" height="30"/>
                                 <state key="normal" title="Is Push Supported"/>
                                 <connections>
                                     <action selector="isPushSupported:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CE6-g0-1zB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1o-JO-gsL">
-                                <rect key="frame" x="246" y="110" width="108" height="30"/>
+                                <rect key="frame" x="133" y="110" width="108" height="30"/>
                                 <state key="normal" title="Register Device"/>
                                 <connections>
                                     <action selector="registerDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S9G-Tw-4yf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-vc-Vvh">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-vc-Vvh">
                                 <rect key="frame" x="269" y="148" width="62" height="30"/>
                                 <state key="normal" title="Get Tags"/>
                                 <connections>
@@ -40,13 +44,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-fs-LAj">
-                                <rect key="frame" x="239" y="224" width="123" height="30"/>
+                                <rect key="frame" x="126" y="224" width="123" height="30"/>
                                 <state key="normal" title="Get Subscriptions"/>
                                 <connections>
                                     <action selector="getSubscriptions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QJa-yu-hhr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJm-eP-NYw">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJm-eP-NYw">
                                 <rect key="frame" x="219" y="262" width="163" height="30"/>
                                 <state key="normal" title="Unsubscribe From Tags"/>
                                 <connections>
@@ -54,13 +58,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afP-3z-WDh">
-                                <rect key="frame" x="239" y="300" width="123" height="30"/>
+                                <rect key="frame" x="126" y="300" width="123" height="30"/>
                                 <state key="normal" title="Unregister Device"/>
                                 <connections>
                                     <action selector="unregisterDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Fe-DZ-4ne"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-s0-kUv">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-s0-kUv">
                                 <rect key="frame" x="237" y="186" width="127" height="30"/>
                                 <state key="normal" title="Subscribe To Tags"/>
                                 <connections>
@@ -68,7 +72,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NJm-eP-NYw" firstAttribute="top" secondItem="Egi-fs-LAj" secondAttribute="bottom" constant="8" id="0J8-86-3s9"/>
                             <constraint firstItem="Egi-fs-LAj" firstAttribute="top" secondItem="lqd-s0-kUv" secondAttribute="bottom" constant="8" id="Bv8-u7-36I"/>
@@ -108,28 +112,28 @@
                         <viewControllerLayoutGuide type="bottom" id="AnP-0n-0Oa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lmu-za-wYg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-FH-FUC">
-                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-Nh-9dn">
-                                <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <rect key="frame" x="16" y="110" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-rf-v8A">
-                                <rect key="frame" x="19" y="148" width="48" height="30"/>
+                                <rect key="frame" x="15" y="148" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="5fp-pM-IG1" eventType="touchUpInside" id="fj6-x3-r3H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-eR-2G9">
-                                <rect key="frame" x="79" y="148" width="38" height="30"/>
+                                <rect key="frame" x="75" y="148" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="5fp-pM-IG1" eventType="touchUpInside" id="z0q-Q6-0J7"/>
@@ -148,7 +152,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xp9-Nh-9dn" firstAttribute="top" secondItem="ixV-FH-FUC" secondAttribute="bottom" constant="8" id="DbH-0u-swx"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xp9-Nh-9dn" secondAttribute="leading" id="Dto-C5-GBo"/>
@@ -184,7 +188,7 @@
             <objects>
                 <navigationController id="QV8-76-0gx" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ZX-FC-ZNj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

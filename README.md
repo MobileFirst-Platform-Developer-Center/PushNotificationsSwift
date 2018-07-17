@@ -32,7 +32,7 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notificatio
 * Must be tested on physical devices.
 * The BundleID must relate to an AppID configured with push notifications.
 * The certificate must be uploaded via the MobileFirst Operations Console.
-* Must use Xcode 7.3 and Swift 2.2
+* Must use Xcode 8.2.1 and above  and Swift 3.0
 
 ### Supported Levels
 IBM MobileFirst Platform Foundation 8.0
