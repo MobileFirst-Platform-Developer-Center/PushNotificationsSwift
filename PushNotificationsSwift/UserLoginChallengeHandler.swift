@@ -33,7 +33,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
     }
     
     // login (Triggered by Login Notification)
-    func login(_ notification:Notification){
+    @objc func login(_ notification:Notification){
         let userInfo = notification.userInfo as! Dictionary<String, AnyObject?>
         let username = userInfo["username"] as! String
         let password = userInfo["password"] as! String
@@ -58,7 +58,7 @@ class UserLoginChallengeHandler: SecurityCheckChallengeHandler {
     }
     
     // logout (Triggered by Logout Notification)
-    func logout(){
+    @objc func logout(){
         WLAuthorizationManager.sharedInstance().logout(self.securityCheck){
             (error) -> Void in
             if(error != nil){
