@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(_:)))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(back(_:)))
         self.navigationItem.leftBarButtonItem = backButton
     }
 
@@ -70,14 +70,14 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name(rawValue: LoginCancelNotificationKey), object: nil)
     }
     
-    func back(_ sender: UIBarButtonItem) {
+    @objc func back(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: LoginCancelNotificationKey), object: nil)
     }
     
     
     // updateLabels (triggered by LoginRequired notification)
-    func updateLabels(_ notification:Notification){
+    @objc func updateLabels(_ notification:Notification){
         let userInfo = notification.userInfo as! Dictionary<String, AnyObject?>
         let errMsg = userInfo["errorMsg"] as! String
         let remainingAttempts = userInfo["remainingAttempts"] as! Int
@@ -86,13 +86,13 @@ class LoginViewController: UIViewController {
     }
     
     // loginSuccess (triggered by LoginSuccess notification)
-    func loginSuccess(){
+    @objc func loginSuccess(){
         NSLog("login success")
         navigationController?.popViewController(animated: true)
     }
     
     // loginFailure (triggered by LoginFailure notification)
-    func loginFailure(_ notification:Notification){
+    @objc func loginFailure(_ notification:Notification){
         self.usernameInput.text = ""
         self.passwordInput.text = ""
         self.remainingLabel.text = ""

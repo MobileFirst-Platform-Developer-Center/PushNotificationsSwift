@@ -45,8 +45,8 @@ class ViewController: UIViewController {
     }
 
     func showAlert(_ message: String) {
-        let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertDialog.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+        let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertController.Style.alert)
+        alertDialog.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
 
         present(alertDialog, animated: true, completion: nil)
     }
@@ -297,7 +297,7 @@ extension ViewController {
 //MARK: Security
 extension ViewController{
     // loginRequired
-    func loginRequired(_ notification:Notification){
+    @objc func loginRequired(_ notification:Notification){
         let userInfo = notification.userInfo as! Dictionary<String, AnyObject?>        
         self.performSegue(withIdentifier: "showLogin", sender: userInfo)
     }

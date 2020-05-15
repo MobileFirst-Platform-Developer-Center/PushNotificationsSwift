@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialize MFPPush
         MFPPush.sharedInstance().initialize()
 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = UserLoginChallengeHandler()
 
         // Check if application was opened from a notification
-        if let userInfo = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
+        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
             //handle your notification
             print("Received Notification in didFinishLaunchingWithOptions \(userInfo)")
 
@@ -73,8 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func showAlert(_ message: String) {
-        let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertDialog.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+        let alertDialog = UIAlertController(title: "Push Notification", message: message, preferredStyle: UIAlertController.Style.alert)
+        alertDialog.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
 
         window!.rootViewController?.present(alertDialog, animated: true, completion: nil)
     }
